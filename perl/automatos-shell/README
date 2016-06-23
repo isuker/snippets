@@ -7,18 +7,27 @@ its aim is not to replace any automatos debuggers. It can be used to run automat
 APIs step by step. Also reload the modified files in runtime to save the restart effort.
 
 
+Perl Module Dependence
+======================
+cpan Term::ReadLine
+
+Required for 'reload' shell command:
+cpan Module::Refresh
+cpan Module::Util
+
+
 How to use
 ================
 The only parameter you need to the automatos testbed file as same as the ones you are
 going to run automatos test.
 
-[ray@localhost] perl ./automatos-shell.pl 
+[ray@localhost]./automatos-shell.pl 
 Automatos Interactive Shell
 Usage:  automatos-shell.pl -t testbed.xml [-s script [--shell]]
      -t|--testbed: Specify testbed file
      -s|--script:  Run command in script file
      -p|--package: Load Test Package
-     -l|--level:   Debug Level (INFO, DEBUG, TRACE) while loading test bed file
+     -l|--level:   Debug Level (INFO, DEBUG, CMD, TRACE) while loading test bed file
      -i|--shell:   Enter Interactive Mode after script
      -h|--help:    Print this help
 
@@ -46,7 +55,7 @@ Automatos Interactive Shell Usage:
 Example
 ================
 There are pre-defined variables to be used to control the automatos objects in TestBed file.
-All hosts variable: @hosts
+All hosts variable: @hosts if exist
 All celerras variable: @celerras if exist
 All vnxes variable: @vnxes if exist
 All vnxs variable: @vnxs if exist
@@ -154,15 +163,15 @@ Cabinet:             DPE9
 
 Tips
 ================
-1. Suggest to set log level to TRACE, so that we can easily all the backend command for the test.
+1. Suggest to set log level to TRACE, so that we can easily see all the backend command for the test.
 2. All the input which successfully run in the automatos shell console will be saved to '.phistory' in current directory for future reference
 3. In the currect automatos shell session, you can use CTL+R (just like bash search) to search the history command. (Only test on Linux host)
-3. Use 'reload' option to refresh your modified module file, and then continue debug your codes without re-run
+4. Use 'reload' option to refresh your modified module file, and then continue debug your codes without re-run
 
 
 Batch run
 ===============
-You can batch run command or API in shell console.
+You can batch run command or API in shell console. Each command line by line will be run in shell console.
 
 Automatos Shell> import smoke_test.txt
 ......
@@ -192,16 +201,15 @@ Not find any objects
 ## File test_automatos_shell.txt Line:28 Command => "find $vplexes[1] Volume system_id=>qr/VPD83T3/i 1", Output =>
 ####Found objects variable: @objects. Total number: 2862
 
-or it's same to use './automatos.pl -s smoke_test.txt'
+Or it's same to use './automatos.pl -s smoke_test.txt'
 
 
 Reload Module in runtime
 ================
 Are you tired of re-run your script Once programming error happen? What's more, what if it costs plenty of minutes to start your script.
-Try 'reload $Package' in automatos shell console, you can load the latest code after you modify it. Then continue test your API without
-re-start your test case script.
+Try 'reload $Package' in automatos shell console, you can load the latest code after you modify it. Then continue test your API without re-start your test case script.
 
-Automatos Shell> reload Automatos::Wrapper::Tool::Vplex
+Automatos Shell> reload Automatos::Wrapper::Tool::Vplex::Device
 Subroutine deviceShowVersion redefined at /SSIE-Interop-Dev/Automatos/Framework/Dev/lib/Automatos/Wrapper/Tool/Vplex/Device.pm line 56.
 Subroutine parseDeviceShowVersion redefined at /SSIE-Interop-Dev/Automatos/Framework/Dev/lib/Automatos/Wrapper/Tool/Vplex/Device.pm line 128.
 Subroutine deviceShowStorageVolumeSummary redefined at /SSIE-Interop-Dev/Automatos/Framework/Dev/lib/Automatos/Wrapper/Tool/Vplex/Device.pm line 208.
@@ -211,17 +219,41 @@ Subroutine parseDeviceRunCollect redefined at /SSIE-Interop-Dev/Automatos/Framew
 Subroutine validateDeviceRunCollectOutput redefined at /SSIE-Interop-Dev/Automatos/Framework/Dev/lib/Automatos/Wrapper/Tool/Vplex/Device.pm line 467.
 Subroutine deviceRunHealthCheck redefined at /SSIE-Interop-Dev/Automatos/Framework/Dev/lib/Automatos/Wrapper/Tool/Vplex/Device.pm line 508.
 Subroutine validateDeviceRunHealthCheck redefined at /SSIE-Interop-Dev/Automatos/Framework/Dev/lib/Automatos/Wrapper/Tool/Vplex/Device.pm line 551.
-[DEBUG] Start reload packge "Automatos::Wrapper::Tool::Vplex"
-Reload Packge "Automatos::Wrapper::Tool::Vplex" done
+[DEBUG] Start reload packge "Automatos/Wrapper/Tool/Vplex/Device.pm"
+Reload Packge "Automatos::Wrapper::Tool::Vplex::Device" done
 
 
 Load Test Module
 ================
-Load Test Module quickly, so that all APIs of Test Case module can be easily called by $self->API()
+Load Test Module quickly, so that all APIs of Test Case module can be easily called by $self->API().
+Don't forget to add 'Automatos/Tests/Dev' into perl %INC path
 
-./automatos-shell.pl -t vplex.xml -p SSIETests::VNX2::Interoperability::Vplex::Base
+Run:
+./automatos-shell.pl -t vplex.xml -p SSIETests::PlatformAgnostic::Interoperability::Vplex::BBT_VPLEX_Interop_00010_StorageVolume_Operations
 
+####All hosts variable: @hosts Automatos::Device::Host::Unix::Linux=HASH(0x6050c9660)
+####All vplexes variable: @vplexes Automatos::Device::Vplex=HASH(0x605489630) Automatos::Device::Vplex=HASH(0x605553e88)
+####Package variable: $self SSIETests::PlatformAgnostic::Interoperability::Vplex::BBT_VPLEX_Interop_00010_StorageVolume_Operations=HASH(0x606623198)
+Automatos Shell> x $self->summary($vplexes[0])
+2016/06/24 00:08:31   [INFO]     >     The Storgae-Volume Summary is:
+{
+  capacity => '51.8T',
+  health => {
+    out_of_date => '0',
+    storage_volumes => '1371',
+    unhealthy => '0'
+  },
+  use => {
+    claimed => '3',
+    meta_data => '7',
+    unclaimed => '450',
+    used => '911'
+  },
+  vendor => {
+    DGC => '1371'
+  }
+}
 
-issues
+Issues
 ================
-please send the issues to <ray.chen@emc.com> for help.
+Please send the issues to <ray.chen@emc.com> for help.

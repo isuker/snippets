@@ -27,12 +27,17 @@ sub load_testbed
     require Automatos::ParseXml;
     require Automatos::Resource;
 
-    my %testBedInfo = Automatos::ParseXml::getTestbed(filename=>$testBedfile);
     eval {
+        my %testBedInfo = Automatos::ParseXml::getTestbed(filename=>$testBedfile);
         $resourceObj = Automatos::Resource->new(%testBedInfo);
         $resourceObj->init();
     };
+    if($@) {
+        print "[ERROR] Load test bed resource failed\n";
+        die $@;
+    }
 
+    print "\n";
     @hosts = $resourceObj->getDevice(type => 'host');
     if (@hosts) {
         print '####All hosts variable: @hosts', " @hosts\n";
@@ -204,7 +209,7 @@ sub do_view
     return $dumper->Dump();
 }
 
-sub do_import
+sub _run_batch_command
 {
     my $script = shift;
 
@@ -223,6 +228,13 @@ sub do_import
     }
 }
 
+sub do_import
+{
+    my $script = shift;
+
+    _run_batch_command($script);
+}
+
 sub do_reload
 {
     my $module = shift;
@@ -236,9 +248,9 @@ sub do_reload
     if ($module_full_filename =~ /::/) {
         $module_full_filename = Module::Util::module_fs_path($module);
     }
-    print "[DEBUG] Start reload packge \"$module_full_filename\"\n";
+    print "[DEBUG] Start reload package \"$module_full_filename\"\n";
     $refresh->refresh_module($module_full_filename);
-    print "Reload Packge \"$module\" done\n";
+    print "Reload Package \"$module\" done\n";
 
 }
 
@@ -246,7 +258,7 @@ sub do_find
 {
     my $data = shift;
 
-    # find <$object> <$type> <$criteria> <force>
+    # find <$object> <$type> <$criteria> <$force>
     my ($device, $type, $criteria, $force) = split(" ", $data, 4);
 
     if (!$force) {
@@ -267,7 +279,7 @@ sub do_find
             my $count = scalar(@objects);
             print '####Found objects variable: @objects. Total number: ', "$count\n";
         } else {
-            print "Not find any objects\n";
+            print "Not find any \"$type\" objects\n";
         }   
     }
 }
@@ -410,7 +422,7 @@ sub usage
     print "     -t|--testbed: Specify testbed file \n";
     print "     -s|--script:  Run command in script file \n";
     print "     -p|--package: Load Test Package \n";
-    print "     -l|--level:   Debug Level (INFO, DEBUG, TRACE) while loading test bed file \n";
+    print "     -l|--level:   Debug Level (INFO, DEBUG, CMD, TRACE) while loading test bed file \n";
     print "     -i|--shell:   Enter Interactive Mode after script \n";
     print "     -h|--help:    Print this help \n";
     exit 1;
@@ -464,24 +476,10 @@ if (defined $package) {
 if (defined $script) {
 
     print "Start execute comand from $script file line by line\n";
-
-    open FILE, $script or die $!;
-    my $lineno = 0;
-    while (<FILE>) {
-        $lineno++;
-        chomp $_;
-        # remove heading spaces
-        $_ =~ s/^ *//g;
-        # skip blank line and comment
-        next if ($_ eq "" || $_ =~ /^#/);
-
-        print "\n## File $script Line:$lineno Command => \"$_\", Output =>\n";
-        my $stop = onecmd($_);
-    }
+    _run_batch_command($script);
 
     if (!defined $shell) {
         exit;
-
     }
 }
 

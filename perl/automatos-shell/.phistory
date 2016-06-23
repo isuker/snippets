@@ -3,30 +3,22 @@ $a=$hosts[0]->dispatch('powerShellPassThrough',command='Get-Date')
 $a=$hosts[0]->dispatch('powerShellPassThrough',command=>'Get-Date')
 $a=$vnxs[0]->getPassiveSp()
 $a=5
-$a=5
 $b->find(type=>'Sp',force_sync=>1)
-$b=$vnxs[0]
-$b=$vnxs[0]
 $b=$vnxs[0]
 $c->{EFT2K3}
 $c=$cs->getProperty("domains")
 $celerras[0]->find(type => "CifsService", criteria=>{datamover=>'server_3'})
-$celerras[0]->getProperty("i18n_mode")
 $celerras[0]->getProperty("i18n_mode")
 $client->mountCifsFilesystem("\\$CIFS_netbios\\$share", username => "$CIFS_domain/$adminUser", password => "$adminPassword");
 $client->mountCifsFilesystem(export=>"\\$CIFS_netbios\\$share", username => "$CIFS_domain/$adminUser", password => "$adminPassword");
 $cluster = $self->{'cluster-1'}->{'clusterObj'}
 $cmd = 'Get-VirtualDisk | ? FriendlyName -eq Space1 | Remove-VirtualDisk -Confirm:$false'
 $cmd = 'Get-VirtualDisk | ? FriendlyName -eq Space1 | Remove-VirtualDisk -Confirm:$false';
-$cmd = 'Get-VirtualDisk | ? FriendlyName -eq Space1 | Remove-VirtualDisk -Confirm:$false';
-$cmd="curl -d '{"mount_path":"\\\\10.108.127.10\\cifs00", "username":"administrator", "password":"Password123!"}' 10.10.37.191/api/instances/syncpoint/2538744/action/map -v"
 $cmd="curl -d '{"mount_path":"\\\\10.108.127.10\\cifs00", "username":"administrator", "password":"Password123!"}' 10.10.37.191/api/instances/syncpoint/2538744/action/map -v"
 $cmd='curl -d '{"mount_path":"\\\\10.108.127.10\\cifs00", "username":"administrator", "password":"Password123!"}' 10.10.37.191/api/instances/syncpoint/2538744/action/map -v'
 $cmd=curl -d '{"mount_path":"\\\\10.108.127.10\\cifs00", "username":"administrator", "password":"Password123!"}' 10.10.37.191/api/instances/syncpoint/2538744/action/map -v
-$cmd=qw("curl -d '{"mount_path":"\\\\10.108.127.10\\cifs00", "username":"administrator", "password":"Password123!"}' 10.10.37.191/api/instances/syncpoint/2538744/action/map -v")
 $cmd=qw/"curl -d '{"mount_path":"\\\\10.108.127.10\\cifs00", "username":"administrator", "password":"Password123!"}' 10.10.37.191/api/instances/syncpoint/2538744/action/map -v"/
 $cmd=qw/curl -d '{"mount_path":"\\\\10.108.127.10\\cifs00", "username":"administrator", "password":"Password123!"}' 10.10.37.191/api/instances/syncpoint/2538744/action/map -v/
-$cmd=qw/curl -d \'{"mount_path":"\\\\10.108.127.10\\cifs00", "username":"administrator", "password":"Password123!"}\' 10.10.37.191/api/instances/syncpoint/2538744/action/map -v/
 $cs
 $cs = $hosts[2]->find(type=> "CifsService", criteria => {datamover=>"server_3"});
 $cs->getDatamoverMountInfo(datamover=>$dm)
@@ -44,14 +36,11 @@ $devices1 = $self->vplexCreateDevice($self->{vplexA})
 $devices1->[0]->delete()
 $devices1->[0]->remove()
 $devices1->[1]->remove()
-$devices1->[1]->remove()
 $devices2 = $self->vplexCreateDevice($self->{vplexB})
 $dir=$hosts[0]->createTemporaryDirectory()
 $dm->commit()
 $dm->getDatamoverMountInfo()
 $dm->getProperies()
-$dm->getProperties()
-$dm->getProperties()
 $dm->getProperties()
 $dm=$celerra[0]->find(type=> "vdm", criteria => {datamover=>$dmName});
 $dm=$celerras[0]->find(type => "datamover", criteria => { slot => $dmSlotNumber })
@@ -61,11 +50,9 @@ $dm=$celerras[0]->find(type=> "vdm", criteria => {datamover=>$dmName});
 $dm[0]->commit()
 $dm[0]->commmit()
 $dm[0]->remove()
-$dm[0]->remove()
 $f1=$celerras[0]
 $f2=$celerras[1]
 $fs
-$host
 $host
 $host = $hosts[1]
 $host->deleteFile(path=>$self->{mapping_filename});
@@ -75,229 +62,23 @@ $hosts[0]->checkForLogEvent()
 $hosts[0]->checkForLogEvent(event=>'system', expression=>'')
 $hosts[0]->checkForLogEvent(event=>'system', expression=>'dfdfd')
 $hosts[0]->checkForLogEvent(event=>'system', expression=>'dfdfd', start_date=>'', end_date=>"")
-$hosts[0]->checkForLogEvent(event=>'system', expression=>'dfdfd', start_date=>'', end_date=>"")
 $hosts[0]->createIoxBlockSession()
 $hosts[0]->doesPathExist(path=>"")
-$hosts[0]->doesPathExist(path=>"C:")
 $hosts[0]->doesPathExist(path=>"C:")
 $hosts[0]->doesPathExist(path=>"C:\")
 $hosts[0]->getDisks()
 $hosts[0]->getIoxBlockSession()
 $hosts[0]->killProcess(process_name=>"FileFiltering.exe")
-$hosts[0]->killProcess(process_name=>"FileFiltering.exe")
-$hosts[0]->killProcess(process_name=>"FileFiltering.exe")
-$hosts[0]->killProcess(process_name=>"FileFiltering.exe", force=>1)
-$hosts[0]->killProcess(process_name=>"FileFiltering.exe", force=>1)
-$hosts[0]->killProcess(process_name=>"FileFiltering.exe", force=>1)
-$hosts[0]->killProcess(process_name=>"FileFiltering.exe", force=>1)
-$hosts[0]->killProcess(process_name=>"FileFiltering.exe", force=>1)
-$hosts[0]->killProcess(process_name=>"FileFiltering.exe", force=>1)
-$hosts[0]->killProcess(process_name=>"FileFiltering.exe", force=>1)
-$hosts[0]->killProcess(process_name=>"FileFiltering.exe", force=>1)
-$hosts[0]->killProcess(process_name=>"FileFiltering.exe", force=>1)
-$hosts[0]->killProcess(process_name=>"FileFiltering.exe", force=>1)
-$hosts[0]->killProcess(process_name=>"FileFiltering.exe", force=>1)
-$hosts[0]->killProcess(process_name=>"FileFiltering.exe", force=>1)
-$hosts[0]->killProcess(process_name=>"FileFiltering.exe", force=>1)
-$hosts[0]->killProcess(process_name=>"FileFiltering.exe", force=>1)
-$hosts[0]->killProcess(process_name=>"FileFiltering.exe", force=>1)
-$hosts[0]->killProcess(process_name=>"FileFiltering.exe", force=>1)
-$hosts[0]->killProcess(process_name=>"FileFiltering.exe", force=>1)
-$hosts[0]->killProcess(process_name=>"FileFiltering.exe", force=>1)
-$hosts[0]->killProcess(process_name=>"FileFiltering.exe", force=>1)
-$hosts[0]->killProcess(process_name=>"FileFiltering.exe", force=>1)
-$hosts[0]->killProcess(process_name=>"FileFiltering.exe", force=>1)
-$hosts[0]->killProcess(process_name=>"FileFiltering.exe", force=>1)
-$hosts[0]->killProcess(process_name=>"FileFiltering.exe", force=>1)
-$hosts[0]->killProcess(process_name=>"FileFiltering.exe", force=>1)
-$hosts[0]->killProcess(process_name=>"FileFiltering.exe", force=>1)
-$hosts[0]->killProcess(process_name=>"FileFiltering.exe", force=>1)
-$hosts[0]->killProcess(process_name=>"FileFiltering.exe", force=>1)
-$hosts[0]->killProcess(process_name=>"FileFiltering.exe", force=>1)
-$hosts[0]->killProcess(process_name=>"FileFiltering.exe", force=>1)
-$hosts[0]->killProcess(process_name=>"FileFiltering.exe", force=>1)
-$hosts[0]->killProcess(process_name=>"FileFiltering.exe", force=>1)
-$hosts[0]->killProcess(process_name=>"FileFiltering.exe", force=>1)
-$hosts[0]->killProcess(process_name=>"FileFiltering.exe", force=>1)
-$hosts[0]->killProcess(process_name=>"FileFiltering.exe", force=>1)
-$hosts[0]->killProcess(process_name=>"FileFiltering.exe", force=>1)
-$hosts[0]->killProcess(process_name=>"FileFiltering.exe", force=>1)
-$hosts[0]->killProcess(process_name=>"FileFiltering.exe", force=>1)
-$hosts[0]->killProcess(process_name=>"FileFiltering.exe", force=>1)
-$hosts[0]->killProcess(process_name=>"FileFiltering.exe", force=>1)
-$hosts[0]->killProcess(process_name=>"FileFiltering.exe", force=>1)
-$hosts[0]->killProcess(process_name=>"FileFiltering.exe", force=>1)
-$hosts[0]->killProcess(process_name=>"FileFiltering.exe", force=>1)
-$hosts[0]->killProcess(process_name=>"FileFiltering.exe", force=>1)
-$hosts[0]->killProcess(process_name=>"FileFiltering.exe", force=>1)
-$hosts[0]->killProcess(process_name=>"FileFiltering.exe", force=>1)
-$hosts[0]->killProcess(process_name=>"FileFiltering.exe", force=>1)
-$hosts[0]->killProcess(process_name=>"FileFiltering.exe", force=>1)
-$hosts[0]->killProcess(process_name=>"FileFiltering.exe", force=>1)
-$hosts[0]->killProcess(process_name=>"FileFiltering.exe", force=>1)
-$hosts[0]->killProcess(process_name=>"FileFiltering.exe", force=>1)
-$hosts[0]->killProcess(process_name=>"FileFiltering.exe", force=>1)
-$hosts[0]->killProcess(process_name=>"FileFiltering.exe", force=>1)
-$hosts[0]->killProcess(process_name=>"FileFiltering.exe", force=>1)
-$hosts[0]->killProcess(process_name=>"FileFiltering.exe", force=>1)
-$hosts[0]->killProcess(process_name=>"FileFiltering.exe", force=>1)
-$hosts[0]->killProcess(process_name=>"FileFiltering.exe", force=>1)
-$hosts[0]->killProcess(process_name=>"FileFiltering.exe", force=>1)
-$hosts[0]->killProcess(process_name=>"FileFiltering.exe", force=>1)
-$hosts[0]->killProcess(process_name=>"FileFiltering.exe", force=>1)
-$hosts[0]->killProcess(process_name=>"FileFiltering.exe", force=>1)
-$hosts[0]->killProcess(process_name=>"FileFiltering.exe", force=>1)
-$hosts[0]->killProcess(process_name=>"FileFiltering.exe", force=>1)
-$hosts[0]->killProcess(process_name=>"FileFiltering.exe", force=>1)
-$hosts[0]->killProcess(process_name=>"FileFiltering.exe", force=>1)
-$hosts[0]->killProcess(process_name=>"FileFiltering.exe", force=>1)
-$hosts[0]->killProcess(process_name=>"FileFiltering.exe", force=>1)
-$hosts[0]->killProcess(process_name=>"FileFiltering.exe", force=>1)
-$hosts[0]->killProcess(process_name=>"FileFiltering.exe", force=>1)
-$hosts[0]->killProcess(process_name=>"FileFiltering.exe", force=>1)
-$hosts[0]->killProcess(process_name=>"FileFiltering.exe", force=>1)
-$hosts[0]->killProcess(process_name=>"FileFiltering.exe", force=>1)
-$hosts[0]->killProcess(process_name=>"FileFiltering.exe", force=>1)
-$hosts[0]->killProcess(process_name=>"FileFiltering.exe", force=>1)
-$hosts[0]->killProcess(process_name=>"FileFiltering.exe", force=>1)
-$hosts[0]->killProcess(process_name=>"FileFiltering.exe", force=>1)
-$hosts[0]->killProcess(process_name=>"FileFiltering.exe", force=>1)
-$hosts[0]->killProcess(process_name=>"FileFiltering.exe", force=>1)
-$hosts[0]->killProcess(process_name=>"FileFiltering.exe", force=>1)
-$hosts[0]->killProcess(process_name=>"FileFiltering.exe", force=>1)
-$hosts[0]->killProcess(process_name=>"FileFiltering.exe", force=>1)
-$hosts[0]->killProcess(process_name=>"FileFiltering.exe", force=>1)
-$hosts[0]->killProcess(process_name=>"FileFiltering.exe", force=>1)
-$hosts[0]->killProcess(process_name=>"FileFiltering.exe", force=>1)
-$hosts[0]->killProcess(process_name=>"FileFiltering.exe", force=>1)
-$hosts[0]->killProcess(process_name=>"FileFiltering.exe", force=>1)
-$hosts[0]->killProcess(process_name=>"FileFiltering.exe", force=>1)
-$hosts[0]->killProcess(process_name=>"FileFiltering.exe", force=>1)
-$hosts[0]->killProcess(process_name=>"FileFiltering.exe", force=>1)
-$hosts[0]->killProcess(process_name=>"FileFiltering.exe", force=>1)
-$hosts[0]->killProcess(process_name=>"FileFiltering.exe", force=>1)
-$hosts[0]->killProcess(process_name=>"FileFiltering.exe", force=>1)
-$hosts[0]->killProcess(process_name=>"FileFiltering.exe", force=>1)
-$hosts[0]->killProcess(process_name=>"FileFiltering.exe", force=>1)
-$hosts[0]->killProcess(process_name=>"FileFiltering.exe", force=>1)
-$hosts[0]->killProcess(process_name=>"FileFiltering.exe", force=>1)
-$hosts[0]->killProcess(process_name=>"FileFiltering.exe", force=>1)
-$hosts[0]->killProcess(process_name=>"FileFiltering.exe", force=>1)
-$hosts[0]->killProcess(process_name=>"FileFiltering.exe", force=>1)
-$hosts[0]->killProcess(process_name=>"FileFiltering.exe", force=>1)
-$hosts[0]->killProcess(process_name=>"FileFiltering.exe", force=>1)
-$hosts[0]->killProcess(process_name=>"FileFiltering.exe", force=>1)
-$hosts[0]->killProcess(process_name=>"FileFiltering.exe", force=>1)
-$hosts[0]->killProcess(process_name=>"FileFiltering.exe", force=>1)
-$hosts[0]->killProcess(process_name=>"FileFiltering.exe", force=>1)
-$hosts[0]->killProcess(process_name=>"FileFiltering.exe", force=>1)
-$hosts[0]->killProcess(process_name=>"FileFiltering.exe", force=>1)
-$hosts[0]->killProcess(process_name=>"FileFiltering.exe", force=>1)
-$hosts[0]->killProcess(process_name=>"FileFiltering.exe", force=>1)
-$hosts[0]->killProcess(process_name=>"FileFiltering.exe", force=>1)
-$hosts[0]->killProcess(process_name=>"FileFiltering.exe", force=>1)
-$hosts[0]->killProcess(process_name=>"FileFiltering.exe", force=>1)
-$hosts[0]->killProcess(process_name=>"FileFiltering.exe", force=>1)
-$hosts[0]->killProcess(process_name=>"FileFiltering.exe", force=>1)
-$hosts[0]->killProcess(process_name=>"FileFiltering.exe", force=>1)
-$hosts[0]->killProcess(process_name=>"FileFiltering.exe", force=>1)
-$hosts[0]->killProcess(process_name=>"FileFiltering.exe", force=>1)
-$hosts[0]->killProcess(process_name=>"FileFiltering.exe", force=>1)
-$hosts[0]->killProcess(process_name=>"FileFiltering.exe", force=>1)
-$hosts[0]->killProcess(process_name=>"FileFiltering.exe", force=>1)
-$hosts[0]->killProcess(process_name=>"FileFiltering.exe", force=>1)
-$hosts[0]->killProcess(process_name=>"FileFiltering.exe", force=>1)
-$hosts[0]->killProcess(process_name=>"FileFiltering.exe", force=>1)
-$hosts[0]->killProcess(process_name=>"FileFiltering.exe", force=>1)
-$hosts[0]->killProcess(process_name=>"FileFiltering.exe", force=>1)
-$hosts[0]->killProcess(process_name=>"FileFiltering.exe", force=>1)
-$hosts[0]->killProcess(process_name=>"FileFiltering.exe", force=>1)
-$hosts[0]->killProcess(process_name=>"FileFiltering.exe", force=>1)
-$hosts[0]->killProcess(process_name=>"FileFiltering.exe", force=>1)
-$hosts[0]->killProcess(process_name=>"FileFiltering.exe", force=>1)
-$hosts[0]->killProcess(process_name=>"FileFiltering.exe", force=>1)
-$hosts[0]->killProcess(process_name=>"FileFiltering.exe", force=>1)
-$hosts[0]->killProcess(process_name=>"FileFiltering.exe", force=>1)
-$hosts[0]->killProcess(process_name=>"FileFiltering.exe", force=>1)
-$hosts[0]->killProcess(process_name=>"FileFiltering.exe", force=>1)
-$hosts[0]->killProcess(process_name=>"FileFiltering.exe", force=>1)
-$hosts[0]->killProcess(process_name=>"FileFiltering.exe", force=>1)
-$hosts[0]->killProcess(process_name=>"FileFiltering.exe", force=>1)
-$hosts[0]->killProcess(process_name=>"FileFiltering.exe", force=>1)
-$hosts[0]->killProcess(process_name=>"FileFiltering.exe", force=>1)
-$hosts[0]->killProcess(process_name=>"FileFiltering.exe", force=>1)
-$hosts[0]->killProcess(process_name=>"FileFiltering.exe", force=>1)
-$hosts[0]->killProcess(process_name=>"FileFiltering.exe", force=>1)
-$hosts[0]->killProcess(process_name=>"FileFiltering.exe", force=>1)
-$hosts[0]->killProcess(process_name=>"FileFiltering.exe", force=>1)
-$hosts[0]->killProcess(process_name=>"FileFiltering.exe", force=>1)
-$hosts[0]->killProcess(process_name=>"FileFiltering.exe", force=>1)
-$hosts[0]->killProcess(process_name=>"FileFiltering.exe", force=>1)
-$hosts[0]->killProcess(process_name=>"FileFiltering.exe", force=>1)
-$hosts[0]->killProcess(process_name=>"FileFiltering.exe", force=>1)
-$hosts[0]->killProcess(process_name=>"FileFiltering.exe", force=>1)
-$hosts[0]->killProcess(process_name=>"FileFiltering.exe", force=>1)
-$hosts[0]->killProcess(process_name=>"FileFiltering.exe", force=>1)
-$hosts[0]->killProcess(process_name=>"FileFiltering.exe", force=>1)
-$hosts[0]->killProcess(process_name=>"FileFiltering.exe", force=>1)
-$hosts[0]->killProcess(process_name=>"FileFiltering.exe", force=>1)
-$hosts[0]->killProcess(process_name=>"FileFiltering.exe", force=>1)
-$hosts[0]->killProcess(process_name=>"FileFiltering.exe", force=>1)
-$hosts[0]->killProcess(process_name=>"FileFiltering.exe", force=>1)
-$hosts[0]->killProcess(process_name=>"FileFiltering.exe", force=>1)
-$hosts[0]->killProcess(process_name=>"FileFiltering.exe", force=>1)
-$hosts[0]->killProcess(process_name=>"FileFiltering.exe", force=>1)
-$hosts[0]->killProcess(process_name=>"FileFiltering.exe", force=>1)
-$hosts[0]->killProcess(process_name=>"FileFiltering.exe", force=>1)
-$hosts[0]->killProcess(process_name=>"FileFiltering.exe", force=>1)
-$hosts[0]->killProcess(process_name=>"FileFiltering.exe", force=>1)
-$hosts[0]->killProcess(process_name=>"FileFiltering.exe", force=>1)
-$hosts[0]->killProcess(process_name=>"FileFiltering.exe", force=>1)
-$hosts[0]->killProcess(process_name=>"FileFiltering.exe", force=>1)
-$hosts[0]->killProcess(process_name=>"FileFiltering.exe", force=>1)
-$hosts[0]->killProcess(process_name=>"FileFiltering.exe", force=>1)
-$hosts[0]->killProcess(process_name=>"FileFiltering.exe", force=>1)
-$hosts[0]->killProcess(process_name=>"FileFiltering.exe", force=>1)
-$hosts[0]->killProcess(process_name=>"FileFiltering.exe", force=>1)
-$hosts[0]->killProcess(process_name=>"FileFiltering.exe", force=>1)
-$hosts[0]->killProcess(process_name=>"FileFiltering.exe", force=>1)
-$hosts[0]->killProcess(process_name=>"FileFiltering.exe", force=>1)
-$hosts[0]->killProcess(process_name=>"FileFiltering.exe", force=>1)
-$hosts[0]->killProcess(process_name=>"FileFiltering.exe", force=>1)
-$hosts[0]->killProcess(process_name=>"FileFiltering.exe", force=>1)
-$hosts[0]->killProcess(process_name=>"FileFiltering.exe", force=>1)
-$hosts[0]->killProcess(process_name=>"FileFiltering.exe", force=>1)
-$hosts[0]->killProcess(process_name=>"FileFiltering.exe", force=>1)
-$hosts[0]->killProcess(process_name=>"FileFiltering.exe", force=>1)
-$hosts[0]->killProcess(process_name=>"FileFiltering.exe", force=>1)
-$hosts[0]->killProcess(process_name=>"FileFiltering.exe", force=>1)
-$hosts[0]->killProcess(process_name=>"FileFiltering.exe", force=>1)
-$hosts[0]->killProcess(process_name=>"FileFiltering.exe", force=>1)
-$hosts[0]->killProcess(process_name=>"FileFiltering.exe", force=>1)
 $hosts[0]->killProcess(process_name=>"FileFiltering.exe", force=>1)
 $hosts[0]->mountCifsFilesystem()
 $hosts[0]->mountCifsFilesystem(export=>"\\", username => "EFT2K3/cifsuser", password => "cifsuser");
 $hosts[0]->mountCifsFilesystem(export=>"\\R96E3EFT2K3\\svr2sh1", username=>"EFT2K3\cifsuser", password=>"cifsuser")
 $hosts[0]->mountCifsFilesystem(export=>"\\R96E3EFT2K3\svr2sh1", username=>"EFT2K3\cifsuser", password=>"cifsuser")
 $hosts[0]->mountCifsFilesystem(export=>"\\\\10.244.205.92\\TestShr10.244.10.142_Cifs9")
-$hosts[0]->mountCifsFilesystem(export=>"\\\\10.244.205.92\\TestShr10.244.10.142_Cifs9", username => "Administrator", password => "Password123!")
-$hosts[0]->mountCifsFilesystem(export=>"\\\\10.244.205.92\\TestShr10.244.10.142_Cifs9", username => "Administrator", password => "Password123!")
-$hosts[0]->mountCifsFilesystem(export=>"\\\\10.244.205.92\\TestShr10.244.10.142_Cifs9", username => "Administrator", password => "Password123#")
-$hosts[0]->mountCifsFilesystem(export=>"\\\\10.244.205.92\\TestShr10.244.10.142_Cifs9", username => "Administrator", password => "Password123#")
-$hosts[0]->mountCifsFilesystem(export=>"\\\\10.244.205.92\\TestShr10.244.10.142_Cifs9", username => "Administrator", password => "Password123#")
 $hosts[0]->mountCifsFilesystem(export=>"\\\\10.244.205.92\\TestShr10.244.10.142_Cifs9", username => "Administrator", password => "Password123#")
 $hosts[0]->mountCifsFilesystem(export=>"\\\\10.244.248.28\\TestShr_Cifs0",username=>"Administrator",password=>"Password123#")
-$hosts[0]->mountCifsFilesystem(export=>"\\\\R96E3EFT2K3\\server3fs1", username => "EFT2K3/cifsuser", password => "cifsuser");
-$hosts[0]->mountCifsFilesystem(export=>"\\\\R96E3EFT2K3\\sv3rsh1", username => "EFT2K3/cifsuser", password => "cifsuser");
-$hosts[0]->mountCifsFilesystem(export=>"\\\\R96E3EFT2K3\\svr3fs1", domain=>"EFT2K3",username => "cifsuser", password => "cifsuser");
 $hosts[0]->mountCifsFilesystem(export=>"\\\\R96E3EFT2K3\\svr3fs1", domain=>"EFT2K3"username => "cifsuser", password => "cifsuser");
-$hosts[0]->mountCifsFilesystem(export=>"\\\\R96E3EFT2K3\\svr3fs1", username => "EFT2K3/cifsuser", password => "cifsuser");
-$hosts[0]->mountCifsFilesystem(export=>"\\\\R96E3EFT2K3\\svr3fs1", username => "EFT2K3/cifsuser", password => "cifsuser");
-$hosts[0]->mountCifsFilesystem(export=>"\\\\R96E3EFT2K3\\svr3fs1", username => "EFT2K3/cifsuser", password => "cifsuser");
 $hosts[0]->mountCifsFilesystem(export=>"\\\\R96E3EFT2K3\\svr3fs1", username => "EFT2K3/cifsuserr", password => "cifsuser");
-$hosts[0]->mountCifsFilesystem(export=>"\\\\R96E3EFT2K3\\svr3sh1", domain=>"EFT2K3",username => "cifsuser", password => "cifsuser");
-$hosts[0]->mountCifsFilesystem(export=>"\\\\R96E3EFT2K3\\svr3sh1", domain=>"EFT2K3",username => "cifsuser", password => "cifsuser");
-$hosts[0]->mountCifsFilesystem(export=>"\\\\R96E3EFT2K3\\svr3sh1", username => "EFT2K3/cifsuser", password => "cifsuser");
 $hosts[0]->mountCifsFilesystem(export=>"\\\\R96E3EFT2K3\\svrsh1", username => "EFT2K3/cifsuser", password => "cifsuser");
 $hosts[0]->mountCifsFilesystem(mountpoint=>"Q", export=>"\\\\10.244.205.92\\TestShr10.244.10.142_Cifs9")
 $hosts[0]->mountCifsFilesystem(mountpoint=>"Q:", export=>"\\\\10.244.205.92\\TestShr10.244.10.142_Cifs9")
@@ -309,43 +90,21 @@ $hosts[0]->run(command=>["C:\\Windows\\TEMP\\tmp_1393402712_993514_9916_0\\FileF
 $hosts[0]->run(command=>["FileFiltering.exe","r96e-3cs0" server_3 EFT2K3 10.109.165.34 10.109.165.35 iShare3440 notIShare3440 1 400 0 NO"])
 $hosts[0]->run(command=>['cmd', '/c', "C:\\Windows\\TEMP\\tmp_1393402712_993514_9916_0\\"])
 $hosts[0]->run(command=>['cmd', '/c', "C:\\Windows\\TEMP\\tmp_1393402712_993514_9916_0\\FileFiltering.exe r96e-3cs0 server_3 EFT2K3 10.109.165.34 10.109.165.35 iShare3440 notIShare3440 1 1 0 NO"])
-$hosts[0]->run(command=>['cmd', '/c', "C:\\Windows\\TEMP\\tmp_1393402712_993514_9916_0\\FileFiltering.exe r96e-3cs0 server_3 EFT2K3 10.109.165.34 10.109.165.35 iShare3440 notIShare3440 1 1 0 NO"])
-$hosts[0]->run(command=>['cmd', '/c', "C:\\Windows\\TEMP\\tmp_1393402712_993514_9916_0\\FileFiltering.exe r96e-3cs0 server_3 EFT2K3 10.109.165.34 10.109.165.35 iShare3440 notIShare3440 1 1 0 NO"])
-$hosts[0]->run(command=>['cmd', '/c', "C:\\Windows\\TEMP\\tmp_1393402712_993514_9916_0\\FileFiltering.exe r96e-3cs0 server_3 EFT2K3 10.109.165.34 10.109.165.35 iShare3440 notIShare3440 1 1 0 NO"])
 $hosts[0]->run(command=>['cmd', '/c', "C:\\Windows\\TEMP\\tmp_1393402712_993514_9916_0\\FileFiltering.exe r96e-3cs0 server_3 EFT2K3 10.109.165.34 10.109.165.35 iShare3440 notIShare3440 1 400 0 NO"])
 $hosts[0]->run(command=>['cmd', '/c', "C:\\Windows\\TEMP\\tmp_1393402712_993514_9916_0\\FileFiltering.exe"])
 $hosts[0]->run(command=>['cmd', '/c', "C:\\Windows\\TEMP\\tmp_1393402712_993514_9916_0\\lgtst.exe r96e-3cs0 server_3 EFT2K3 10.109.165.34 10.109.165.35 iShare3440 notIShare3440 1 1 0 NO"])
 $hosts[0]->run(command=>['cmd', '/c', "DEBUG_ON=1; C:\\Windows\\TEMP\\tmp_1393402712_993514_9916_0\\FileFiltering.exe r96e-3cs0 server_3 EFT2K3 10.109.165.34 10.109.165.35 iShare3440 notIShare3440 1 400 0 NO"])
 $hosts[0]->run(command=>['cmd', '/c', "ECHO %HOME%; dir C:\\Windows\\TEMP\\tmp_1393402712_993514_9916_0"])
-$hosts[0]->run(command=>['cmd', '/c', "ECHO %HOME%; dir C:\\Windows\\TEMP\\tmp_1393402712_993514_9916_0"])
 $hosts[0]->run(command=>['cmd', '/c', "FileFiltering.exe 10.109.183.53 server_3 EFT2K3 10.109.165.34 10.109.165.35 iShare3440 notIShare3440 1 1 0 NO"], directory=>"C:\Windows\TEMP\tmp_1393472200_979902_9344_0", environment=>{DEBUG_ON=>1})
-$hosts[0]->run(command=>['cmd', '/c', "FileFiltering.exe 10.109.183.53 server_3 EFT2K3 10.109.165.34 10.109.165.35 iShare3440 notIShare3440 1 1 0 NO"], directory=>"C:\\Windows\\TEMP\\tmp_1393402712_993514_9916_0", environment=>{DEBUG_ON=>1})
 $hosts[0]->run(command=>['cmd', '/c', "FileFiltering.exe 10.109.183.53 server_3 EFT2K3 10.109.165.34 10.109.165.35 iShare9344 notIShare9344 1 1 0 NO"], directory=>"C:\\Windows\\TEMP\\tmp_1393472200_979902_9344_0", environment=>{DEBUG_ON=>1})
 $hosts[0]->run(command=>['cmd', '/c', "FileFiltering.exe r96e-3cs0 server_3 EFT2K3 10.109.165.34 10.109.165.35 iShare3440 notIShare3440 1 1 0 NO"])
-$hosts[0]->run(command=>['cmd', '/c', "FileFiltering.exe r96e-3cs0 server_3 EFT2K3 10.109.165.34 10.109.165.35 iShare3440 notIShare3440 1 1 0 NO"])
-$hosts[0]->run(command=>['cmd', '/c', "FileFiltering.exe r96e-3cs0 server_3 EFT2K3 10.109.165.34 10.109.165.35 iShare3440 notIShare3440 1 1 0 NO"])
-$hosts[0]->run(command=>['cmd', '/c', "FileFiltering.exe r96e-3cs0 server_3 EFT2K3 10.109.165.34 10.109.165.35 iShare3440 notIShare3440 1 1 0 NO"])dd
 $hosts[0]->run(command=>['cmd', '/c', "FileFiltering.exe r96e-3cs0 server_3 EFT2K3 10.109.165.34 10.109.165.35 iShare3440 notIShare3440 1 1 0 NO"], directory=>"C:\\Windows\\TEMP\\tmp_1393402712_993514_9916_0", environment=>{DEBUG_ON=>1})
 $hosts[0]->run(command=>['cmd', '/c', "FileFiltering.exe r96e-3cs0 server_3 EFT2K3 10.109.165.34 10.109.165.35 iShare3440 notIShare3440 1 400 0 NO"])
-$hosts[0]->run(command=>['cmd', '/c', "FileFiltering.exe r96e-3cs0 server_3 EFT2K3 10.109.165.34 10.109.165.35 iShare3440 notIShare3440 1 400 0 NO"], directory=>"C:\\Windows\\TEMP\\tmp_1393402712_993514_9916_0")
-$hosts[0]->run(command=>['cmd', '/c', "FileFiltering.exe r96e-3cs0 server_3 EFT2K3 10.109.165.34 10.109.165.35 iShare3440 notIShare3440 1 400 0 NO"], directory=>"C:\\Windows\\TEMP\\tmp_1393402712_993514_9916_0", environment=>{DEBUG_ON=>1})
-$hosts[0]->run(command=>['cmd', '/c', "FileFiltering.exe r96e-3cs0 server_3 EFT2K3 10.109.165.34 10.109.165.35 iShare9344 notIShare9344 1 1 0 NO"], directory=>"C:\\Windows\\TEMP\\tmp_1393472200_979902_9344_0", environment=>{DEBUG_ON=>1})
-$hosts[0]->run(command=>['cmd', '/c', "FileFiltering.exe r96e-3cs0 server_3 EFT2K3 10.109.165.34 10.109.165.35 iShare9344 notIShare9344 1 1 0 NO"], directory=>"C:\\Windows\\TEMP\\tmp_1393472200_979902_9344_0", environment=>{DEBUG_ON=>1})
 $hosts[0]->run(command=>['cmd', '/c', "cd /c C:\\Windows\\TEMP\\tmp_1393402712_993514_9916_0 C:\\Windows\\TEMP\\tmp_1393402712_993514_9916_0\\\FileFiltering.exe r96e-3cs0 server_3 EFT2K3 10.109.165.34 10.109.165.35 iShare3440 notIShare3440 1 1 0 NO"])
-$hosts[0]->run(command=>['cmd', '/c', "cd /c C:\\Windows\\TEMP\\tmp_1393402712_993514_9916_0 C:\\Windows\\TEMP\\tmp_1393402712_993514_9916_0\\\FileFiltering.exe r96e-3cs0 server_3 EFT2K3 10.109.165.34 10.109.165.35 iShare3440 notIShare3440 1 1 0 NO"])
-$hosts[0]->run(command=>['cmd', '/c', "cd /c C:\\Windows\\TEMP\\tmp_1393402712_993514_9916_0"])
-$hosts[0]->run(command=>['cmd', '/c', "cd C:\\Windows\\TEMP\\tmp_1393402712_993514_9916_0 C:\\Windows\\TEMP\\tmp_1393402712_993514_9916_0\; \\FileFiltering.exe r96e-3cs0 server_3 EFT2K3 10.109.165.34 10.109.165.35 iShare3440 notIShare3440 1 1 0 NO"])
-$hosts[0]->run(command=>['cmd', '/c', "cd C:\\Windows\\TEMP\\tmp_1393402712_993514_9916_0 C:\\Windows\\TEMP\\tmp_1393402712_993514_9916_0\\\FileFiltering.exe r96e-3cs0 server_3 EFT2K3 10.109.165.34 10.109.165.35 iShare3440 notIShare3440 1 1 0 NO"])
 $hosts[0]->run(command=>['cmd', '/c', "cd C:\\Windows\\TEMP\\tmp_1393402712_993514_9916_0"])
-$hosts[0]->run(command=>['cmd', '/c', "cd C:\\Windows\\TEMP\\tmp_1393402712_993514_9916_0; C:\\Windows\\TEMP\\tmp_1393402712_993514_9916_0\\FileFiltering.exe r96e-3cs0 server_3 EFT2K3 10.109.165.34 10.109.165.35 iShare3440 notIShare3440 1 1 0 NO"])
-$hosts[0]->run(command=>['cmd', '/c', "cd C:\\Windows\\TEMP\\tmp_1393402712_993514_9916_0; C:\\Windows\\TEMP\\tmp_1393402712_993514_9916_0\\FileFiltering.exe r96e-3cs0 server_3 EFT2K3 10.109.165.34 10.109.165.35 iShare3440 notIShare3440 1 1 0 NO"])
-$hosts[0]->run(command=>['cmd', '/c', "cd C:\\Windows\\TEMP\\tmp_1393402712_993514_9916_0; C:\\Windows\\TEMP\\tmp_1393402712_993514_9916_0\\FileFiltering.exe r96e-3cs0 server_3 EFT2K3 10.109.165.34 10.109.165.35 iShare3440 notIShare3440 1 1 0 NO"])
-$hosts[0]->run(command=>['cmd', '/c', "cd C:\\Windows\\TEMP\\tmp_1393402712_993514_9916_0; C:\\Windows\\TEMP\\tmp_1393402712_993514_9916_0\\FileFiltering.exe r96e-3cs0 server_3 EFT2K3 10.109.165.34 10.109.165.35 iShare3440 notIShare3440 1 1 0 NO"])
-$hosts[0]->run(command=>['cmd', '/c', "cd C:\\Windows\\TEMP\\tmp_1393402712_993514_9916_0; FileFiltering.exe r96e-3cs0 server_3 EFT2K3 10.109.165.34 10.109.165.35 iShare3440 notIShare3440 1 1 0 NO"])
 $hosts[0]->run(command=>['cmd', '/c', "cd C:\\Windows\\TEMP\\tmp_1393402712_993514_9916_0; FileFiltering.exe r96e-3cs0 server_3 EFT2K3 10.109.165.34 10.109.165.35 iShare3440 notIShare3440 1 1 0 NO"])
 $hosts[0]->run(command=>['cmd', '/c', "cd C:\\Windows\\TEMP\\tmp_1393402712_993514_9916_0; dir %CWD%"])
 $hosts[0]->run(command=>['cmd', '/c', "cd C:\\Windows\\TEMP\\tmp_1393402712_993514_9916_0; dir %PWD%"])
-$hosts[0]->run(command=>['cmd', '/c', "cd C:\\Windows\\TEMP\\tmp_1393402712_993514_9916_0; dir ."])
 $hosts[0]->run(command=>['cmd', '/c', "cd C:\\Windows\\TEMP\\tmp_1393402712_993514_9916_0; dir ."])
 $hosts[0]->run(command=>['cmd', '/c', "cd C:\\Windows\\TEMP\\tmp_1393402712_993514_9916_0; dir"])
 $hosts[0]->run(command=>['cmd', '/c', "cd C:\\Windows\\TEMP\\tmp_1393402712_993514_9916_0;C:\\Windows\\TEMP\\tmp_1393402712_993514_9916_0\\\FileFiltering.exe r96e-3cs0 server_3 EFT2K3 10.109.165.34 10.109.165.35 iShare3440 notIShare3440 1 1 0 NO"])
@@ -353,129 +112,58 @@ $hosts[0]->run(command=>['cmd', '/c', "cd C:\\Windows\\TEMP\\tmp_1393402712_9935
 $hosts[0]->run(command=>['cmd', '/c', "del lgtst.exe "], directory=>"C:\\Perl64\\bin\\")
 $hosts[0]->run(command=>['cmd', '/c', "del lgtst.exe /y"], directory=>"C:\\Perl64\\bin\\")
 $hosts[0]->run(command=>['cmd', '/c', "del"], directory=>"C:\\Perl64\\bin\\")
-$hosts[0]->run(command=>['cmd', '/c', "dir C:"])
-$hosts[0]->run(command=>['cmd', '/c', "dir C:"])
 $hosts[0]->run(command=>['cmd', '/c', "dir C:\Perl"])
 $hosts[0]->run(command=>['cmd', '/c', "dir C:\Windows\TEMP\tmp_1393401439_13500_4076_0\"])
 $hosts[0]->run(command=>['cmd', '/c', "dir C:\Windows\TEMP\tmp_1393402712_993514_9916_0"])
 $hosts[0]->run(command=>['cmd', '/c', "dir C:\\Perl"])
 $hosts[0]->run(command=>['cmd', '/c', "dir C:\\Windows\\TEMP\\tmp_1393401439_13500_4076_0"])
 $hosts[0]->run(command=>['cmd', '/c', "dir C:\\Windows\\TEMP\\tmp_1393402712_993514_9916_0"])
-$hosts[0]->run(command=>['cmd', '/c', "dir C:\\Windows\\TEMP\\tmp_1393402712_993514_9916_0"])
-$hosts[0]->run(command=>['cmd', '/c', "dir C:\\Windows\\TEMP\\tmp_1393402712_993514_9916_0"])
 $hosts[0]->run(command=>['cmd', '/c', "dir C:\\Windows\\TEMP\\tmp_1393407204_645245_10312_0"])
-$hosts[0]->run(command=>['cmd', '/c', "dir D:"])
-$hosts[0]->run(command=>['cmd', '/c', "dir E:"])
-$hosts[0]->run(command=>['cmd', '/c', "dir F:"])
-$hosts[0]->run(command=>['cmd', '/c', "dir F:"])
-$hosts[0]->run(command=>['cmd', '/c', "dir G:"])
-$hosts[0]->run(command=>['cmd', '/c', "dir H:"])
-$hosts[0]->run(command=>['cmd', '/c', "dir J:"])
-$hosts[0]->run(command=>['cmd', '/c', "dir K:"])
 $hosts[0]->run(command=>['cmd', '/c', "dir L:"])
 $hosts[0]->run(command=>['cmd', '/c', "dir X:"])
 $hosts[0]->run(command=>['cmd', '/c', "dir"], directory=>"C:")
-$hosts[0]->run(command=>['cmd', '/c', "dir"], directory=>"C:\Perl\bin")
-$hosts[0]->run(command=>['cmd', '/c', "dir"], directory=>"C:\\Perl64\\bin")
-$hosts[0]->run(command=>['cmd', '/c', "dir"], directory=>"C:\\Perl64\\bin")
-$hosts[0]->run(command=>['cmd', '/c', "dir"], directory=>"C:\\Perl64\\bin\\lg*")
-$hosts[0]->run(command=>['cmd', '/c', "dir"], directory=>"C:\\Perl64\\bin\\lg*")
 $hosts[0]->run(command=>['cmd', '/c', "dir"], directory=>"C:\\Perl64\bin")
 $hosts[0]->run(command=>['cmd', '/c', "dir"], directory=>"C:\\Perl\\bin")
 $hosts[0]->run(command=>['cmd', '/c', "dir"], directory=>"C;\\Perl\\bin")
 $hosts[0]->run(command=>['cmd', '/c', "echo $HOME; dir C:\\Windows\\TEMP\\tmp_1393402712_993514_9916_0"])
-$hosts[0]->run(command=>['cmd', '/c', "echo %HOME%; dir C:\\Windows\\TEMP\\tmp_1393402712_993514_9916_0"])
-$hosts[0]->run(command=>['cmd', '/c', "echo \$HOME; dir C:\\Windows\\TEMP\\tmp_1393402712_993514_9916_0"])
 $hosts[0]->run(command=>['cmd', '/c', "echo \%HOME\%; dir C:\\Windows\\TEMP\\tmp_1393402712_993514_9916_0"])
 $hosts[0]->run(command=>['cmd', '/c', "net delete Y: /delete /y"])
 $hosts[0]->run(command=>['cmd', '/c', "net help"])
-$hosts[0]->run(command=>['cmd', '/c', "net lis"])
-$hosts[0]->run(command=>['cmd', '/c', "net list"])
-$hosts[0]->run(command=>['cmd', '/c', "net list"])
-$hosts[0]->run(command=>['cmd', '/c', "net use * /delete  /y"])
-$hosts[0]->run(command=>['cmd', '/c', "net use -v"])
 $hosts[0]->run(command=>['cmd', '/c', "net use /delete /y"])
 $hosts[0]->run(command=>['cmd', '/c', "net use /delete all /y"])
-$hosts[0]->run(command=>['cmd', '/c', "net use T: /delete /y"])
-$hosts[0]->run(command=>['cmd', '/c', "net use U: /delete /y"])
-$hosts[0]->run(command=>['cmd', '/c', "net use V: /delete /y"])
 $hosts[0]->run(command=>['cmd', '/c', "net use W: /delete /y"])
 $hosts[0]->run(command=>['cmd', '/c', "net use Y: /delete /y"])
 $hosts[0]->run(command=>['cmd', '/c', "net use \\R96E3EFT2K3 /USER:EFT2K3\cifsuser cifsuser"])
 $hosts[0]->run(command=>['cmd', '/c', "net use x: /delete /y"])
 $hosts[0]->run(command=>['cmd', '/c', "net use z: /delete /y"])
 $hosts[0]->run(command=>['cmd', '/c', "net use"])
-$hosts[0]->run(command=>['cmd', '/c', "net use"])
-$hosts[0]->run(command=>['cmd', '/c', "net use"])
-$hosts[0]->run(command=>['cmd', '/c', "net use"])
-$hosts[0]->run(command=>['cmd', '/c', "net use"])
-$hosts[0]->run(command=>['cmd', '/c', "net use"])
 $hosts[0]->run(command=>['cmd', '/c', "net view"])
 $hosts[0]->run(command=>['cmd', '/c', "net"])
-$hosts[0]->run(command=>['cmd', '/c', "set DEBUG_ON=1 C:\\Windows\\TEMP\\tmp_1393402712_993514_9916_0\\FileFiltering.exe r96e-3cs0 server_3 EFT2K3 10.109.165.34 10.109.165.35 iShare3440 notIShare3440 1 400 0 NO"])
 $hosts[0]->run(command=>['cmd', '/c', "set DEBUG_ON=1; C:\\Windows\\TEMP\\tmp_1393402712_993514_9916_0\\FileFiltering.exe r96e-3cs0 server_3 EFT2K3 10.109.165.34 10.109.165.35 iShare3440 notIShare3440 1 400 0 NO"])
-$hosts[0]->run(command=>['cmd', '/c', "set PATH= C:\\Windows\\TEMP\\tmp_1393402712_993514_9916_0; FileFiltering.exe r96e-3cs0 server_3 EFT2K3 10.109.165.34 10.109.165.35 iShare3440 notIShare3440 1 1 0 NO"])
-$hosts[0]->run(command=>['cmd', '/c', "set PATH="C:\\Windows\\TEMP\\tmp_1393402712_993514_9916_0"; FileFiltering.exe r96e-3cs0 server_3 EFT2K3 10.109.165.34 10.109.165.35 iShare3440 notIShare3440 1 1 0 NO"])
-$hosts[0]->run(command=>['cmd', '/c', "set PATH='C:\\Windows\\TEMP\\tmp_1393402712_993514_9916_0'; FileFiltering.exe r96e-3cs0 server_3 EFT2K3 10.109.165.34 10.109.165.35 iShare3440 notIShare3440 1 1 0 NO"])
 $hosts[0]->run(command=>['cmd', '/c', "set PATH='C:\\Windows\\TEMP\\tmp_1393402712_993514_9916_0'; FileFiltering.exe r96e-3cs0 server_3 EFT2K3 10.109.165.34 10.109.165.35 iShare3440 notIShare3440 1 1 0 NO"])
 $hosts[0]->run(command=>['cmd', '/c', "set"], directory=>"C:")
 $hosts[0]->run(command=>['cmd', '/c', "set"], directory=>"C:\\Perl\\bin")
 $hosts[0]->run(command=>['cmd', '/c', 'net use Q: delete /y'])
-$hosts[0]->run(command=>['cmd', '/c', 'net use Q: delete /y'])
 $hosts[0]->run(command=>['cmd', '/c', 'net use \\R96E3EFT2K3 /USER:EFT2K3\cifsuser cifsuser'])
 $hosts[0]->run(command=>['cmd', '/c', 'net use'])
-$hosts[0]->run(command=>['cmd', '/c', 'net use'])
-$hosts[0]->run(command=>['cmd', '/c', 'net use'])
-$hosts[0]->run(command=>['cmd', '/c', 'net use'])
-$hosts[0]->run(command=>['cmd', '/c', 'net use'])
-$hosts[0]->run(command=>['cmd', '/c', 'net use'])
-$hosts[0]->run(command=>['cmd', '/c', 'net use'])
-$hosts[0]->run(command=>['cmd', '/c', 'net use'])
-$hosts[0]->run(command=>['cmd', '/c', 'net use'])
-$hosts[0]->run(command=>['cmd', '/c', 'net use'])
-$hosts[0]->run(command=>['cmd', '/c', 'net use'])
-$hosts[0]->run(command=>['cmd', '/c', 'net use'])
-$hosts[0]->run(command=>['cmd', '/c', 'net use'])
-$hosts[0]->run(command=>['cmd', '/c', 'net use'])
-$hosts[0]->run(command=>['cmd', '/c', 'net use'])
-$hosts[0]->run(command=>['cmd', '/c', 'net use'])
-$hosts[0]->run(command=>['cmd', '/c', 'net use'])
 $hosts[0]->run(command=>['sh', '/c', 'uname'])
-$hosts[0]->run(commands=>['cmd', '/c', 'net use Q: delete /y'])
 $hosts[0]->run(commands=>['cmd', '/c', 'net use Q: delete /y'])
 $hosts[0]->run(commands=>['cmd', '/c', 'net use'])
 $hosts[0]->run(commmands=>['cmd', '/c', 'net use Q: delete /y'])
 $hosts[0]->unmountCifsFilesystem(mountpoint=>"Q", export=>"\\\\10.244.205.92\\TestShr10.244.10.142_Cifs9")
-$hosts[0]->unmountCifsFilesystem(mountpoint=>"Q", export=>"\\\\10.244.205.92\\TestShr10.244.10.142_Cifs9")
-$hosts[0]->unmountCifsFilesystem(mountpoint=>"S:", export=>"\\\\10.109.165.34\\svr3sh1")
 $hosts[0]->unmountCifsFilesystem(mountpoint=>"S:", export=>"\\\\10.109.165.34\svr3sh1")
-$hosts[0]->unmountCifsFilesystem(mountpoint=>"Z")
-$hosts[0]->unmountCifsFilesystem(mountpoint=>"Z", export=>"\\\\10.244.205.92\\TestShr10.244.10.142_Cifs9")
-$hosts[0]->unmountCifsFilesystem(mountpoint=>"Z".":")
-$hosts[0]->unmountCifsFilesystem(mountpoint=>"Z".":", export=>"\\\\10.244.205.92\\TestShr10.244.10.142_Cifs9")
-$hosts[0]->unmountCifsFilesystem(mountpoint=>"Z:")
 $hosts[0]->unmountCifsFilesystem(mountpoint=>"Z:", export=>"\\\\10.244.205.92\\TestShr10.244.10.142_Cifs9")
 $hosts[0]->unmountCifsFilesystem(mountpoint=>"z", export=>"\\\\10.244.205.92\\TestShr10.244.10.142_Cifs9")
-$hosts[1]->createIoxBlockSession()
-$hosts[1]->createIoxBlockSession()
-$hosts[1]->createIoxBlockSession()
-$hosts[1]->createIoxBlockSession()
-$hosts[1]->createIoxBlockSession()
 $hosts[1]->createIoxBlockSession()
 $hosts[1]->init()
 $hosts[1]->mountCifsFilesystem(  export=>"\\\\10.244.248.28\\TestShr_Cifs0",username=>"Administrator",passdfdfdword=>"Password123#")
 $hosts[1]-init()
 $hosts[2]->_validatePath()
 $hosts[2]->_validatePath(path=>"C:\")
-$hosts[2]->_validatePath(path=>"C:\")
 $hosts[2]->_validatePath(path=>"C:\\")
 $hosts[2]->deleteDirectory(path=>"\\\\10.109.165.34\\C\$\\.filefilter")
 $hosts[2]->deleteDirectory(path=>"\\\\10.109.165.34\\C\$\\.filefilter\\*")
-$hosts[2]->deleteDirectory(path=>"\\\\10.109.165.34\\C\$\\.filefilter\\*")
 $hosts[2]->run(command=>['cmd', '/c', "\\\\10.109.165.34\\C\$\\.filefilter\\*"])
-$hosts[2]->run(command=>['cmd', '/c', "del /Q \\\\10.109.165.34\\C\$\\.filefilter\\*"])
-$hosts[2]->run(command=>['cmd', '/c', "del /Q \\\\10.109.165.34\\C\$\\.filefilter\\*"])
-$hosts[2]->run(command=>['cmd', '/c', "del /Q \\\\10.109.165.34\\C\$\\.filefilter\\*"])
 $hosts[2]->run(command=>['cmd', '/c', "del /Q \\\\10.109.165.34\\C\$\\.filefilter\\*"])
 $hosts[2]->run(command=>['cmd', '/c', 'del /Q  \\10.109.165.34\C$\.filefilter\*'])
 $hosts[2]->unmountCifsFilesystem(mountpoint=>'Y:')
@@ -484,23 +172,13 @@ $hostss[0]->run(command=>['cmd', '/c', 'net use \\R96E3EFT2K3 /USER:EFT2K3\cifsu
 $iox
 $iox = $self->startIoxIO(luns=>\@vv, host=>$host);
 $iox->checkHistoryForErrors()
-$iox->checkHistoryForErrors()
-$iox->checkHistoryForErrors()
-$iox->checkHistoryForErrors()
-$iox->checkHistoryForErrors()
-$iox->checkHistoryForErrors()
 $iox->getStatus()
-$iox->getStatus()
-$iox->init()
 $iox->init()
 $iox->start()
 $iox->start(luns=>[$vv[1], $vv[2]])
 $iox->start(luns=>[$vv[1]])
 $iox->start(luns=>[$vv[1]],io_mode=>'RC')
 $iox->stop()
-$iox->stop()
-$iox=$hosts[1]->createIoxBlockSession()
-$iox=$hosts[1]->createIoxBlockSession()
 $iox=$hosts[1]->createIoxBlockSession()
 $iox=hosts[1]->createIoxBlockSession()
 $key = 'cluster-1'
@@ -508,18 +186,14 @@ $key='cluster-1'
 $lun    = "dfdfdfd"
 $m="F"
 $mount=$hosts[0]->initializeDisk(disk=>'5',filesystem=>'NTFS')
-$mount=$hosts[0]->initializeDisk(disk=>'5',filesystem=>'NTFS')
 $my= new Automatos::Component::Battery::Emc::Vnx
 $my= new Automatos::Component::Battery::Emc::Vnx(device=>$a, properties=>{sp=>'spb'})
 $my= new Automatos::Component::Battery::Emc::Vnx(device=>$b)
 $my= new Automatos::Component::Battery::Emc::Vnx(device=>$b, properties=>{sp=>'spa'})
 $my= new Automatos::Component::Battery::Emc::Vnx(device=>$b, properties=>{sp=>'spb'})
-$my= new Automatos::Component::Battery::Emc::Vnx(device=>$b, properties=>{sp=>'spb'})
-$my= new Automatos::Component::Battery::Emc::Vnx(device=>$b, properties=>{sp=>'spb'})
 $my= new Automatos::Component::Battery::Emc::Vnx(device=>$b, {name=>'spa'})
 $my= new Automatos::Component::Battery::Emc::Vnx(device=>$b, {sp=>'spa'})
 $my= new Automatos::Component::Battery::Emc::Vnx(device=>$p)
-$name
 $name
 $name = $host->getHostname();
 $name = $key
@@ -528,58 +202,29 @@ $name="cluster-1"
 $name='cluster-1'
 $p->run(command=>['cmd', '/c', 'net use'])
 $p1=>getPropries()
-$ray
-$ray=1
-$ray=10
-$ray=5
-$self
 $self
 $self->
-$self->preTestCase()
-$self->preTestCase()
-$self->preTestCase()
 $self->preTestCase()
 $self->startIoxIO()
 $self->startIoxIO(luns=>[], host=>$host)
 $self->startIoxIO(luns=>[], host=>$hosts[0])
 $self->startIoxIO(luns=>[], host=>$hosts[1])
-$self->startIoxIO(luns=>[], host=>$hosts[1])
 $self->vnxGenMappingFile($hosts[0
 $self->vnxGenMappingFile($hosts[0],$self->{vnxA}
-$self->vnxGenMappingFile($hosts[0],$self->{vnxA}
-$self->vnxGenMappingFile($hosts[0],$self->{vnxA}, @lun)
-$self->vnxGenMappingFile($hosts[0],$self->{vnxA}, \@lun)
-$self->vnxGenMappingFile($hosts[1],$self->{vnxA}, @lun)
 $self->vnxGenMappingFile($hosts[1],$self->{vnxA}, \@lun)
-$self->vplex2CluserName($self->{vplexA})
-$self->vplex2CluserName($self->{vplexA})
 $self->vplex2CluserName($self->{vplexA})
 $self->vplex2CluserName($vplex)
 $self->vplex2CluserName()
-$self->vplex2ClusterName($self)
 $self->vplex2ClusterName($self)
 $self->vplex2ClusterName($self->{vplexA})
 $self->vplex2ClusterName($self->{vplexC})
 $self->vplex2ClusterName($vplex)
 $self->vplex2ClusterName($vplexd)
-$self->vplexClaim($self->{vplexA}, $self->{vnxA}, 'cluster-1')
-$self->vplexClaim($self->{vplexA}, $self->{vnxA}, 'cluster-1')
-$self->vplexClaim($self->{vplexA}, $self->{vnxA}, 'cluster-1')
-$self->vplexClaim($self->{vplexA}, $self->{vnxA}, 'cluster-1');
-$self->vplexClaim($self->{vplexA}, $self->{vnxA}, 'cluster-1');
-$self->vplexClaim($self->{vplexB}, $self->{vnxB}, 'cluster-2')
-$self->vplexClaim($self->{vplexB}, $self->{vnxB}, 'cluster-2')
-$self->vplexClaim($self->{vplexB}, $self->{vnxB}, 'cluster-2');
 $self->vplexClaim($self->{vplexB}, $self->{vnxB}, 'cluster-2');
 $self->vplexClaim($self->{vplexB}, $self->{vnxB}, 'cluster-2');ls
 $self->vplexCreateVirtualVolume($devices)
 $self->vplexCreateVirtualVolume($devices->[0])
 $self->vplexDoMigration(name=>'rayTest', source=>$devices->[0], target=>$d2[1])
-$self->vplexDoMigration(name=>'rayTest', source=>$devices1->[0], target=>$d2[1])
-$self->vplexDoMigration(name=>'rayTest2', source=>$devices1->[0], target=>$d2[0])
-$self->vplexDoMigration(name=>'rayTest2', source=>$devices1->[0], target=>$d2[0])
-$self->vplexDoMigration(name=>'rayTest2', source=>$devices1->[0], target=>$d2[0])
-$self->vplexDoMigration(name=>'rayTest2', source=>$devices1->[0], target=>$d2[1])
 $self->vplexDoMigration(name=>'rayTest2', source=>$devices1->[0], target=>$d2[1])
 $self->{'cluster-1'}->{lun} = \@lun
 $self->{'cluster-1'}->{lun} = \@lun1
@@ -588,11 +233,7 @@ $self->{'cluster-2'}->{lun} = \@lunB
 $sp
 $sp->getHostObject()->{ipv4_address}
 $sp=$b->getActiveSp()
-$sp=$b->getActiveSp()
-$sp=$b->getActiveSp()
 $sw = Automatos::Device::Switch->discover(type => "power", model => "wti",ports => { port => [{ attached_device => $f1, id => "B1" },]},communication => {ipv4_address => "10.244.83.10", type => "telnet",username => "admin",password => "admin",persist_connection=>0});
-$switch = Automatos::Device::Switch->discover(type => "power", model => "wti",ports => { port => [{ attached_device => $f1, id => $params{apc_port} },]},communication => {ipv4_address => "10.244.83.10", type => "telnet",username => "admin" password => 'admin',});
-$switch = Automatos::Device::Switch->discover(type => "power", model => "wti",ports => { port => [{ attached_device => $f1, id => $params{apc_port} },]},communication => {ipv4_address => "10.244.83.10", type => "telnet",username => "admin",password => "admin",persist_connection=>0});
 $switch = Automatos::Device::Switch->discover(type => "power", model => "wti",ports => { port => [{ attached_device => $f1, id => $params{apc_port} },]},communication => {ipv4_address => "10.244.83.10", type => "telnet",username => "admin",password => "admin",});
 $switch = Automatos:Device:Switch->discover(type => "power", model => "wti",ports => { port => [{ attached_device => $f1, id => $params{apc_port} },]},communication => {ipv4_address => "10.244.83.10", type => "telnet",username => "admin" password => 'admin',});
 $t=$hosts[0]->getHostDateTime()
@@ -647,8 +288,6 @@ $wwn =~ s/://g
 ($cs3) = $celerras[0]->find(type=> "CifsService", criteria => {name=>"R96E3S3K3",datamover=>"server_3"})
 ($dm)=$celerras[0]->find(type => "datamover", criteria => { slot => "3" });
 ($dm)=$celerras[0]->find(type => "datamover", criteria => { slot => 3 })
-($dm)=$celerras[0]->find(type=> "dm", criteria => {datamover=>"server_3"});
-($dm)=$celerras[0]->find(type=> "vdm", criteria => {datamover=>"server_3"});
 ($dm)=$cs->find(type=>'DataMover', criteria=>{'name'=>'server_3'})
 ($dm)=$cs->find(type=>'datamover', criteria=>{'name'=>'server_3'})
 ($dm)=$vplexes[0]->find(type=>'Migration', criteria => {name=>qr/Vplex/});
@@ -663,12 +302,6 @@ $wwn =~ s/://g
 ($vol) = $storage[1]->find(type=>'Volume', criteria=>{ system_id=>qr/$wwn/i})
 ($vol) = $storage[1]->getDevice()->find(type=>'Volume', criteria=>{ system_id=>qr/$wwn/i})
 (p1,p2)=@vplexes
-*   Trying 10.10.37.191...
-* About to connect() to 10.10.37.191 port 80 (#0)
-* Closing connection #0
-* Connection refused
-* couldn't connect to host
-> x $hosts[0]->mountCifsFilesystem(export=>"\\\\10.244.248.28\\TestShr_Cifs0",username=>"Administrator",password=>"Password123#")
 @a= $hosts[0]->getDisks()
 @a=$cs->getProperty("domains")
 @a=$hosts[0]->getDisks()
@@ -696,16 +329,12 @@ $wwn =~ s/://g
 @d2 = $vplexes[1]->find(type=>'LocalDevice', criteria=>{name=>qr /cluster2dev/i})
 @d2 = $vplexes[1]->find(type=>'LocalDevice', force_sync=>1,criteria=>{name=>qr /cluster2Dev_1/i})
 @disks_NL_SAS=$vnx[0]->getDisk(state=>'unused',vault=>0,kind=>["nl_sas"],technology=>["normal"]);
-@disks_NL_SAS=$vnxs[0]->getDisk(state=>'unused',vault=>0,kind=>["nl_sas"],technology=>["normal"]);
-@disks_NL_SAS=$vnxs[0]->getDisk(state=>'unused',vault=>0,kind=>["sas"],technology=>["normal"]);
 @disks_flash=$vnxs[0]->getDisk(state=>'unused',vault=>0,kind=>["fc"],technology=>["flash"]);
 @disks_flash=$vnxs[0]->getDisk(state=>'unused',vault=>0,kind=>["flash"],technology=>["flash"]);
 @disks_flash=$vnxs[0]->getDisk(state=>'unused',vault=>0,kind=>["sata"],technology=>["flash"]);
 @disks_flash=$vnxs[0]->getDisk(state=>'unused',vault=>0,kind=>["sata_flash"],technology=>["flash"]);
 @dm = $vplexes[0]->find(type=>'Migration', force_sync=>1,criteria => {name=>qr/AutoDev/});
 @dm = $vplexes[0]->find(type=>'Migration', force_sync=>1,criteria => {name=>qr/MigrationTest/});
-@dm = $vplexes[1]->find(type=>'Migration', force_sync=>1,criteria => {name=>qr//});
-@dm = $vplexes[1]->find(type=>'Migration', force_sync=>1,criteria => {name=>qr/MigrationTest/});
 @dm = $vplexes[1]->find(type=>'Migration', force_sync=>1,criteria => {name=>qr/rayTest/});
 @dm = $vplexes[1]->find(type=>'Migration', force_sync=>1,criteria=>{name=>qr /raytest/i})
 @dm1=$vplexes[1]->find(type=>'Migration', force_sync=>1);
@@ -774,7 +403,6 @@ if ($key =~ /(clsuter-\d)/i) {print "ok"}
 if ($key =~ /(cluster)/i) {print "ok";}
 if ($key =~ /(cluster)/i) {print "ok"}
 if ($key =~ /(cluster-\d)/i) { $name = $1; p $self->{$name}->{vplexObj}}
-if ($key =~ /(cluster-\d)/i) { $name = $1; print $self->{$name}->{vplexObj}}
 if ($key =~ /(cluster-\d)/i) { $name = $1; print $vplex->equals($self->{$name}->{vplexObj})}
 if ($key =~ /(cluster-\d)/i) { print $1}
 if ($key =~ /(cluster-\d)/i) {print "ok"}
@@ -784,12 +412,6 @@ if (1) {print "ok"}
 l
 l 
 l d
-l dev
-l dfd
-l h
-l hos
-l hosls
-l host
 l hosts
 l ost
 l vnx
@@ -818,23 +440,6 @@ o deubg TRACE
 o sefe
 o show
 p  $hosts[1]->run(command=>['hostname'])
-p  $self->{vplexA}
-p $#vv
-p $a
-p $a=5
-p $a[0]
-p $b
-p $c
-p $c->{EFT2K3}
-p $celerras[0]->getProperty("i18n_mode")
-p $cmd
-p $cs
-p $deviceA
-p $devices1
-p $devices2
-p $ds[0]->getProperty('id')
-p $h[0]->{ip_address}
-p $h[1]->{ip_address}
 p $hello
 p $host
 p $hosts[0]
@@ -871,35 +476,6 @@ p $vplex
 p $vplex->equals($self->{$name}->{vplexObj})
 p $vplex.equals
 p $vplex.queals
-p $vv
-p $w
-p %a
-p %m
-p %p
-p 4a
-p @Celerras
-p @a
-p @bb
-p @bt
-p @celerras
-p @cs
-p @d2
-p @devices
-p @disks_NL_SAS
-p @disks_flash
-p @dm
-p @ds
-p @h
-p @hosts
-p @ld
-p @lun
-p @lun1
-p @lunB
-p @pools
-p @ppols
-p @vnxes
-p @vnxs
-p @vplexes
 p @vv
 p devices1
 p dispatch
@@ -1060,15 +636,10 @@ x $hosts[0]->dispatch('powerShellPassThrough',command=>'Get-WinEvent -LogName sy
 x $hosts[0]->dispatch('powerShellPassThrough',command=>'Get-WinEvent -LogName system | Out-File');
 x $hosts[0]->dispatch('powerShellPassThrough',command=>'Set-Location C:\Windows\System32\Drivers ; get-childitem * -include mpio.sys | foreach-object "{ "{0} {1}" -f $_.Name, [System.Diagnostics.FileVersionInfo]::GetVersionInfo($_).fileversion }"');
 x $hosts[0]->dispatch('powerShellPassThrough',command=>'Set-Location C:\Windows\System32\Drivers ; get-childitem * -include mpio.sys | foreach-object { "{0} {1}" -f $_.Name, [System.Diagnostics.FileVersionInfo]::GetVersionInfo($_).fileversion }');
-x $hosts[0]->dispatch('powerShellPassThrough',command=>'Set-Location C:\Windows\System32\Drivers ; get-childitem * -include mpio.sys | foreach-object { "{0} {1}" -f $_.Name, [System.Diagnostics.FileVersionInfo]::GetVersionInfo(\$_).fileversion }');
-x $hosts[0]->dispatch('powerShellPassThrough',command=>'Set-Location C:\Windows\System32\Drivers ; get-childitem * -include mpio.sys | foreach-object { "{0}`t{1}" -f $_.Name, [System.Diagnostics.FileVersionInfo]::GetVersionInfo($_).fileversion }');
-x $hosts[0]->dispatch('powerShellPassThrough',command=>'Set-Location C:\\Windows\\System32\\Drivers ; get-childitem * -include mpio.sys \| foreach-object \'{ \"{0} {1}\" -f $_.Name, [System.Diagnostics.FileVersionInfo]::GetVersionInfo($_).fileversion }\'');
 x $hosts[0]->dispatch('powerShellPassThrough',command=>'Set-Location C:\\Windows\\System32\\Drivers ; get-childitem * -include mpio.sys | foreach-object \'{ "{0} {1}" -f $_.Name, [System.Diagnostics.FileVersionInfo]::GetVersionInfo($_).fileversion }\'');
 x $hosts[0]->dispatch('powerShellPassThrough',command=>'Set-Location C:\\Windows\\System32\\Drivers ; get-childitem * -include mpio.sys | foreach-object \'{ "{0} {1}" -f $_.Name, [System.Diagnostics.FileVersionInfo]::GetVersionInfo(\$_).fileversion }\'');
 x $hosts[0]->dispatch('powerShellPassThrough',command=>'Set-Location C:\\Windows\\System32\\Drivers ; get-childitem * -include mpio.sys | foreach-object \'{ \"{0} {1}\" -f $_.Name, [System.Diagnostics.FileVersionInfo]::GetVersionInfo($_).fileversion }"');
 x $hosts[0]->dispatch('powerShellPassThrough',command=>'Set-Location C:\\Windows\\System32\\Drivers ; get-childitem * -include mpio.sys | foreach-object \'{ \"{0} {1}\" -f $_.Name, [System.Diagnostics.FileVersionInfo]::GetVersionInfo($_).fileversion }');
-x $hosts[0]->dispatch('powerShellPassThrough',command=>'Set-Location C:\\Windows\\System32\\Drivers ; get-childitem * -include mpio.sys | foreach-object \'{ \"{0} {1}\" -f $_.Name, [System.Diagnostics.FileVersionInfo]::GetVersionInfo($_).fileversion }\'');
-x $hosts[0]->dispatch('powerShellPassThrough',command=>'Set-Location C:\\Windows\\System32\\Drivers ; get-childitem * -include mpio.sys | foreach-object { "{0} {1}" -f $_.Name, [System.Diagnostics.FileVersionInfo]::GetVersionInfo($_).fileversion }"');
 x $hosts[0]->dispatch('powerShellPassThrough',command=>'Set-Location C:\\Windows\\System32\\Drivers ; get-childitem * -include mpio.sys| foreach-object \'{ \"{0}\" -f $_.Name  }\'');
 x $hosts[0]->dispatch('powerShellPassThrough',command=>'Set-Location C:\\Windows\\System32\\Drivers ; get-childitem * | foreach-object \'{ \"{0} {1}\" -f $_.Name, [System.Diagnostics.FileVersionInfo]::GetVersionInfo($_).fileversion }\'');
 x $hosts[0]->dispatch('powerShellPassThrough',command=>'Set-Location C:\\Windows\\System32\\Drivers ; get-childitem * | foreach-object \'{ \"{0}\" -f $_.Name  }\'');
@@ -1082,19 +653,6 @@ x $hosts[0]->getDisks('fdfd')
 x $hosts[0]->getDisks()
 x $hosts[0]->getDisks(parition=>"!=0")
 x $hosts[0]->getDisks(partition=>"!=0")
-x $hosts[0]->getDisks(partition=>'==0')
-x $hosts[0]->getDisks(partition=>>'==0')
-x $hosts[0]->getDisks(partition=?>'==0')
-x $hosts[0]->getDisks(partitions=> '!=0')
-x $hosts[0]->getDisks(partitions=> '=0')
-x $hosts[0]->getDisks(partitions=> '=0')$hosts[0]->getDisks
-x $hosts[0]->getDisks(partitions=> '>0')
-x $hosts[0]->getDisks(partitions=> '>=0')
-x $hosts[0]->getDisks(partitions=>" ==0")
-x $hosts[0]->getDisks(partitions=>" ==1")
-x $hosts[0]->getDisks(partitions=>" ==2")
-x $hosts[0]->getDisks(partitions=>" > 0")
-x $hosts[0]->getDisks(partitions=>" > 1")
 x $hosts[0]->getDisks(partitions=>" >=1")
 x $hosts[0]->getDisks(partitions=>"!=0")
 x $hosts[0]->getDisks(partitions=>"==0")
@@ -1163,27 +721,6 @@ x $hosts[0]->run(command=>['cmd', '/c', 'dir D:'])
 x $hosts[0]->run(command=>['cmd', '/c', 'dir E:'])
 x $hosts[0]->run(command=>['cmd', '/c', 'dir F:'])
 x $hosts[0]->run(command=>['cmd', '/c', 'dir F:\'])
-x $hosts[0]->run(command=>['cmd', '/c', 'dir F:\\'])
-x $hosts[0]->run(command=>['cmd', '/c', 'dir F:\\testDir1'])
-x $hosts[0]->run(command=>['cmd', '/c', 'dir F:\\testdir1'])
-x $hosts[0]->run(command=>['cmd', '/c', 'dir H:'])
-x $hosts[0]->run(command=>['cmd', '/c', 'dir c:'])
-x $hosts[0]->run(command=>['cmd', '/c', 'dir c:\\tmp_1393906922_664605_12080_0'])
-x $hosts[0]->run(command=>['cmd', '/c', 'dir z:'])
-x $hosts[0]->run(command=>['cmd', '/c', 'dir z:\\filefiltering_suite'])
-x $hosts[0]->run(command=>['cmd', '/c', 'net list'])
-x $hosts[0]->run(command=>['cmd', '/c', 'net use * delete /y'])
-x $hosts[0]->run(command=>['cmd', '/c', 'net use \\\\10.109.165.34\\IPC$ delete /y  '])
-x $hosts[0]->run(command=>['cmd', '/c', 'net use delete Z /y'])
-x $hosts[0]->run(command=>['cmd', '/c', 'net use delete Z: /y'])
-x $hosts[0]->run(command=>['cmd', '/c', 'net use delete x /y'])
-x $hosts[0]->run(command=>['cmd', '/c', 'net use delete x:'])
-x $hosts[0]->run(command=>['cmd', '/c', 'net use'])
-x $hosts[0]->run(command=>['cmd', '/c', 'net'])
-x $hosts[0]->run(command=>['cmd', '/c', 'ping 10.109.165.34'])
-x $hosts[0]->run(command=>['cmd', '/c', 'ping 10.244.248.28'])
-x $hosts[0]->run(command=>['cmd', '/c', 'ping EFT2K3'])
-x $hosts[0]->run(command=>['cmd', '/c', 'ping eft2k3.fra.durham.lab.emc.com'])
 x $hosts[0]->run(command=>['cmd', '/c', 'ping r96e-3cs0'])
 x $hosts[0]->run(command=>['cmd', '/c', 'powershell -ImportSystemModules -command "&{ Set-Location C:\Windows\System32\Drivers ; get-childitem * -include mpio.sys | foreach-object  $_.Name}"'])
 x $hosts[0]->run(command=>['cmd', '/c', 'powershell -ImportSystemModules -command "&{ Set-Location C:\Windows\System32\Drivers ; get-childitem * -include mpio.sys | foreach-object Out-Host $_.Name}"'])
@@ -1198,12 +735,6 @@ x $hosts[0]->run(command=>['cmd', '/c', 'powershell -ImportSystemModules -comman
 x $hosts[0]->run(command=>['cmd', '/c', 'powershell -ImportSystemModules -command "&{ Set-Location C:\Windows\System32\Drivers ; get-childitem * -include mpio.sys | foreach-object { {0} {1} -f $_.Name, [System.Diagnostics.FileVersionInfo]::GetVersionInfo($_).fileversion}}"'])
 x $hosts[0]->run(command=>['cmd', '/c', 'powershell -ImportSystemModules -command "&{ Set-Location C:\Windows\System32\Drivers ; get-childitem * -include mpio.sys }"'])
 x $hosts[0]->run(command=>['cmd', '/c', 'powershell -ImportSystemModules -command &"{ Set-Location C:\Windows\System32\Drivers ; get-childitem * -include mpio.sys | foreach-object Write-Verbose $_.Name}"'])
-x $hosts[0]->run(command=>['cmd', '/c', 'powershell -ImportSystemModules -command &{ Set-Location C:\Windows\System32\Drivers ; get-childitem * -include mpio.sys| foreach-object '])
-x $hosts[0]->run(command=>['cmd', '/c', 'powershell -ImportSystemModules -command &{ Set-Location C:\Windows\System32\Drivers ; get-childitem * -include mpio.sys| foreach-object '{ \"{0}\" -f $_.Name  }''])
-x $hosts[0]->run(command=>['cmd', '/c', 'powershell -ImportSystemModules -command &{ Set-Location C:\Windows\System32\Drivers ; get-childitem * -include mpio.sys| foreach-object '{ \"{0}\" -f $_.Name  }'])
-x $hosts[0]->run(command=>['cmd', '/c', 'powershell -ImportSystemModules -command &{ Set-Location C:\Windows\System32\Drivers ; get-childitem * -include mpio.sys| foreach-object -f name'])
-x $hosts[0]->run(command=>['cmd', '/c', 'powershell -ImportSystemModules -command &{ Set-Location C:\Windows\System32\Drivers ; get-childitem * -include mpio.sys| foreach-object Write-Verbose $_.Name'])
-x $hosts[0]->run(command=>['cmd', '/c', 'powershell -ImportSystemModules -command { Set-Location C:\Windows\System32\Drivers ; get-childitem * -include mpio.sys \| foreach-object Write-Verbose $_.Name'])
 x $hosts[0]->run(command=>['cmd', '/c', 'powershell -ImportSystemModules -command { Set-Location C:\Windows\System32\Drivers ; get-childitem * -include mpio.sys | foreach-object Write-Verbose $_.Name}'])
 x $hosts[0]->run(command=>['cmd', '/c', 'powershell -ImportSystemModules -command { Set-Location C:\Windows\System32\Drivers ; get-childitem * -include mpio.sys| foreach-object Write-Verbose $_.Name'])
 x $hosts[0]->run(command=>['cmd', '/c', 'powershell Get-WinEvent -LogName system | Out-File $dir\\a.txt'])
@@ -1234,13 +765,9 @@ x $hosts[0ispatch('powerShellPassThrough',command=>$cmd);
 x $hosts[1]->killProcess(process_name=>"vjtree", force=>1);
 x $hosts[1]->killProcess(process_name=>"vjtree.exe", force=>1);
 x $hosts[1]->mountCifsFilesystem(  export=>"\\\\10.244.248.28\\TestShr_Cifs0",username=>"Administrator",passdfdfdword=>"Password123#")
-x $hosts[1]->mountCifsFilesystem(  export=>"\\\\10.244.248.28\\TestShr_Cifs0",username=>"Administrator",password=>"Password123#"
-x $hosts[1]->mountCifsFilesystem(  export=>"\\\\10.244.248.28\\TestShr_Cifs0",username=>"Administrator",password=>"Password123#")
 x $hosts[1]->reboot()
 x $hosts[1]->rescanDisks()
 x $hosts[1]->run(command=>['cmd', '/c', 'FileFiltering.exe r96e-3cs0 server_3 EFT2K3 10.109.165.34 10.109.165.35 iShare12080 notIShare12080 1 5 1 NO',directory=>"C:\Users\cifsuser\AppData\Local\Temp\tmp_1393906922_664605_12080_0"])
-x $hosts[1]->run(command=>['cmd', '/c', 'FileFiltering.exe r96e-3cs0 server_3 EFT2K3 10.109.165.34 10.109.165.35 iShare12080 notIShare12080 1 5 1 NO',directory=>"C:\\Users\\cifsuser\\AppData\\Local\\Temp\\tmp_1393906922_664605_12080_0"])
-x $hosts[1]->run(command=>['cmd', '/c', 'FileFiltering.exe r96e-3cs0 server_3 EFT2K3 10.109.165.34 10.109.165.35 iShare12080 notIShare12080 1 5 1 NO'],directory=>"C:\\Users\\cifsuser\\AppData\\Local\\Temp\\tmp_1393906922_664605_12080_0")
 x $hosts[1]->run(command=>['cmd', '/c', 'dir C:\\Users\\cifsuser\\AppData\\Local\\Temp\\tmp_1393906922_664605_12080_0'])
 x $hosts[1]->run(command=>['cmd', '/c', 'dir c:\\tmp_1393906922_664605_12080_0'])
 x $hosts[1]->run(command=>['cmd', '/c', 'net use'])
@@ -1264,18 +791,9 @@ x $hosts[2]->deleteDirectory(path=>"\\\\10.109.165.34\\C\$\\.filefilter\\*")
 x $hosts[2]->deleteDirectory(path=>\\\\10.109.165.34\\C$\\.filefilter\\*)
 x $hosts[2]->loginCifsServer(export=>"\\\\10.109.165.34", domain=>"EFT2K3", username => "cifsuser", password => "cifsuser");
 x $hosts[2]->run(command=>['cmd', '/c', "del /Q \\\\10.109.165.34\\C\$\\.filefilter\\*"])
-x $hosts[2]->run(command=>['cmd', '/c', "del /f \\\\10.109.165.34\\C\$\\.filefilter\\*"])
-x $hosts[2]->run(command=>['cmd', '/c', 'del /Q  \\10.109.165.34\C$\.filefilter\*'])
-x $hosts[2]->run(command=>['cmd', '/c', 'dir  \\10.109.165.34\C$\.filefilter'])
-x $hosts[2]->run(command=>['cmd', '/c', 'dir  \\10.109.165.34\C$\.filefilter\'])
-x $hosts[2]->run(command=>['cmd', '/c', 'dir \\10.109.165.34\C$\.filefilter\*'])
 x $hosts[2]->run(command=>['cmd', '/c', 'dir \\\\10.109.165.34\\C$\\.filefilter\\*'])
 x $hosts[2]->run(command=>['cmd', '/c', 'net use   '])
 x $hosts[2]->run(command=>['cmd', '/c', 'net use  \\\\10.109.165.34\\IPC$ /USER:EFT2K3\cifsuser cifsuser '])
-x $hosts[2]->run(command=>['cmd', '/c', 'net use  \\\\10.109.165.34\\IPC$ delete /y'])
-x $hosts[2]->run(command=>['cmd', '/c', 'net use * \\10.109.165.34\IPC$ /USER:EFT2K3\cifsuser cifsuser /PERSISTENT:NO'])
-x $hosts[2]->run(command=>['cmd', '/c', 'net use * \\\\10.109.165.34\\IPC$ /USER:EFT2K3\cifsuser cifsuser '])
-x $hosts[2]->run(command=>['cmd', '/c', 'net use * \\\\10.109.165.34\\IPC$ /USER:EFT2K3\cifsuser cifsuser /PERSISTENT:NO'])
 x $hosts[2]->run(command=>['cmd', '/c', 'net use * \\\\10.109.165.34\\IPC\$ /USER:EFT2K3\cifsuser cifsuser /PERSISTENT:NO'])
 x $hosts[2]->run(command=>['cmd', '/c', 'net use * delete /y'])
 x $hosts[2]->run(command=>['cmd', '/c', 'net use /delete \\10.109.165.34\IPC$ /USER:EFT2K3\cifsuser cifsuser /y'])
@@ -1285,7 +803,6 @@ x $hosts[2]->run(command=>['cmd', '/c', 'net use Y: /delete /y'])
 x $hosts[2]->run(command=>['cmd', '/c', 'net use \\\\10.109.165.34\\IPC$ delete /y  '])
 x $hosts[2]->run(command=>['cmd', '/c', 'net use delete * /y'])
 x $hosts[2]->run(command=>['cmd', '/c', 'net use delete Y: /y'])
-x $hosts[2]->run(command=>['cmd', '/c', 'net use delete Z: /y'])
 x $hosts[2]->run(command=>['cmd', '/c', 'net use delete \\10.109.165.34\IPC$ /USER:EFT2K3\cifsuser cifsuser /y'])
 x $hosts[2]->run(command=>['cmd', '/c', 'net use delete \\\\10.109.165.34\\IPC$ /USER:EFT2K3\cifsuser cifsuser /y'])
 x $hosts[2]->run(command=>['cmd', '/c', 'net use delete \\\\10.109.165.34\\IPC$ /y'])
@@ -1310,11 +827,6 @@ x $ray
 x $self
 x $self->vplex2CluserName($self->{vplexA})
 x $self->vplex2CluserName($vplex)
-x $self->vplex2ClusterName($self)
-x $self->vplex2ClusterName($self->{'vplexA'})
-x $self->vplex2ClusterName($self->{'vplexB'})
-x $self->vplex2ClusterName($self->{vplexA})
-x $self->vplex2ClusterName($self->{vplexB})
 x $self->vplex2ClusterName($self->{vplexC})
 x $self->vplex2ClusterName($vplex)
 x $self->vplex2ClusterName($vplexd)
@@ -1322,10 +834,6 @@ x $self->{'clsuter-1'}
 x $self->{'cluster-1'}
 x $self->{'cluster-1'}->{clsuterObj}
 x $self->{'cluster-1'}->{clusterObj}
-x $self->{'cluster-1'}->{lun}
-x $self->{'cluster-1'}->{volume}
-x $self->{'cluster-1'}->{volume}->[0]
-x $self->{'cluster-1'}->{volume}->[0]->getProperty('name')
 x $self->{'cluster-1'}->{vplexObj}
 x $self->{'cluster-2'}->{volume}
 x $self->{clsuter-1}
@@ -1360,15 +868,10 @@ x $vnxs[0]->getSps()
 x $vol
 x $vplex
 x $vplex->equals($self->{'cluster-1'}->{vplexObj})
-x $vplex==$vplex2
 x $vplexes[0]->waitForPropertyValue(object=>\@dm, property=>'status', value=>'error')
 x $vv
 x $vv[0]
 x $vv[0]->getProperties()
-x $vv[1]
-x $vv[1]->getProperties()
-x $vv[217]
-x $vv[2]
 x $vv[2]->getProperties()
 x $vv[]->getProperties()
 x $w->copyFile(source=>"Y:\\svr3sh1_1396407271\\FILES\\Funchanged", destination=>"Y:\\svr3sh1_1396407271\\AUDIT\\F1")
@@ -1377,25 +880,18 @@ x $w->copyFile(source=>"Y:\\svr3sh1_1396407271\\FILES\\Funchanged", destination=
 x $w->copyFile(source=>"Y:\\svr3sh1_1396407271\\FILES\\Funchanged", destination=>"Y:\\svr3sh1_1396407271\\AUDIT\\F4")
 x $w->copyFile(source=>"Y:\svr3sh1_1396407271\FILES\Funchanged", destination=>"Y:\svr3sh1_1396407271\AUDIT\F1")
 x $w->copyFile(source=>"Z:\\svr3sh1_1396407271\\FILES\\Funchanged", destination=>"Z:\\svr3sh1_1396407271\\AUDIT\\F10")
-x $w->copyFile(source=>"Z:\svr3sh1_1396407271\FILES\Funchanged", destination=>"Z:\svr3sh1_1396407271\AUDIT\F10")
-x $w->copyFile(source=>'Z:\svr3sh1_1396407271\FILES\Funchanged', destination=>'Z:\svr3sh1_1396407271\AUDIT\F10')
 x $w->copyFile(source=>'Z:\svr3sh1_1396407271\FILES\Funchanged', destination=>'Z:\svr3sh1_1396407271\AUDIT\F11')
 x $w->run(command=>['cmd', '/c', 'dir U'])
 x $w->run(command=>['cmd', '/c', 'dir Y:\\svr3sh1_1396407271\\AUDIT'])
-x $w->run(command=>['cmd', '/c', 'dir Y:\\svr3sh1_1396407271\\FILES\\'])
-x $w->run(command=>['cmd', '/c', 'dir Y:\\svr3sh1_1396407271\\FILES\\Funchanged'])
-x $w->run(command=>['cmd', '/c', 'dir Y:\svr3sh1_1397101292\FILES'])
 x $w->run(command=>['cmd', '/c', 'dir Y:\svr3sh1_1397116191\FILES'])
 x $w->run(command=>['cmd', '/c', 'dir Z'])
 x $w->run(command=>['cmd', '/c', 'dir Z:'])
 x $w->run(command=>['cmd', '/c', 'dir Z:\\svr3sh1_1396406865'])
-x $w->run(command=>['cmd', '/c', 'dir Z:\\svr3sh1_1396406865\\FILES'])
 x $w->run(command=>['cmd', '/c', 'dir Z:\\svr3sh1_1396407271\\AUDIT'])
 x $w->run(command=>['cmd', '/c', 'dir Z:\svr3sh1_1396407271\AUDIT'])
 x $w->run(command=>['cmd', '/c', 'net use '])
 x $w->run(command=>['cmd', '/c', 'net use * /delete /y'])
 x $w->run(command=>['cmd', '/c', 'net use * \\10.108.36.179\TestShr10.108.27.62_Cifs0 /USER:Administrator Password123# /PERSISTENT:NO'])
-x $w->run(command=>['cmd', '/c', 'net use * \\10.109.165.34\svr3sh1 /USER:EFT2K3\cifsuser cifsuser /PERSISTENT:NO'])
 x $w->run(command=>['cmd', '/c', 'net use * \\\\10.109.165.34\\svr3sh1 /USER:EFT2K3\cifsuser cifsuser /PERSISTENT:NO'])
 x $w->run(command=>['cmd', '/c', 'net use U: /delete /y'])
 x $w->run(command=>['cmd', '/c', 'net use delete * /y'])
@@ -1408,16 +904,10 @@ x $w->run(command=>['cmd', '/c', 'xcopy Y:\\svr3sh1_1396407271\\FILES\\Funchange
 x $w->run(command=>['cmd', '/c', 'xcopy Y:\\svr3sh1_1396407271\\FILES\\Funchanged Y:\\svr3sh1_1396407271\\FILES\\a /y'])
 x $w->run(command=>['cmd', '/c', 'xcopy Y:\\svr3sh1_1396407271\\FILES\\Funchanged'])
 x $w->run(command=>['cmd', '/c', 'xcopy Y:\\svr3sh1_1396407271\\FILES\\ray.txt Y:\\svr3sh1_1396407271\\FILES\\a /y'])
-x $w->run(command=>['cmd', '/c', 'xcopy Y:\svr3sh1_1396407271\FILES\Funchanged Y:\svr3sh1_1396407271\AUDIT\F1 /Y'])
-x $w->run(command=>['cmd', '/c', 'xcopy Z:\\svr3sh1_1396406865\\FILES\\Funchanged Z:\\svr3sh1_1396406865\\AUDIT\F1 /Y'])
-x $w->run(command=>['cmd', '/c', 'xcopy Z:\\svr3sh1_1396406865\\FILES\\Funchanged Z:\\svr3sh1_1396406865\\AUDIT\\F1 /Y'])
 x $w->run(command=>['cmd', '/c', 'xcopy Z:\svr3sh1_1396406865\FILES\Funchanged Z:\svr3sh1_1396406865\AUDIT\F1 /Y'])
 x $wwn
 x %,
 x %a
-x %b
-x %m
-x %p
 x 0
 x 1
 x @a
@@ -1436,9 +926,6 @@ x @hosts[0]->run(command=>['sh', '-c',   'ls'])
 x @ld
 x @lun
 x @lun1
-x @p
-x @pools
-x @pw
 x @storage
 x @vnxes
 x @vv
