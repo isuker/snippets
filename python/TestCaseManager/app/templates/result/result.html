@@ -1,0 +1,34 @@
+{% extends "layout.html"%}
+{% set title = "Test Case " %}
+
+
+{% block main %}
+<h1> Test Result Details </h1>
+
+  <ul class=result>
+    <li><h2>Name: <a href="{{result.url}}">{{ result.name }}</a></h2>
+            Author: {{ result.author.username  }}  <br>
+            Date: {{ result.date_created  }}  <br>
+            Test Case: <a href="{{result.case.url}}">{{result.case.name}}</a> <br>
+            Log Link: <a href="{{result.link}}">{{result.link}}</a> <br>
+            Status: {{ result.status }}
+
+  </ul>
+
+  
+<div class="list">
+    <form id="search" method="GET" action="{{ url_for('result.edit', result_id=result.id) }}">
+    <input id="submit" type="submit" value="Edit" >
+    </form>
+    <form id="search" method="POST" action="{{ url_for('result.delete', result_id=result.id) }}">
+    <input id="submit" type="submit" value="Delete" >
+    </form>
+    <form id="search" method="GET" action="{{ url_for('result.add') }}">
+    <input id="submit" type="submit" value="Add" >
+    </form>
+</div>
+
+
+
+{% endblock %}
+

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<head>
+{% block head %}
+    {% block title %}
+        <title>  Test Manager->{{title}}</title>
+    {% endblock %}
+    
+    {% block css %}
+        <link rel="stylesheet" type="text/css" href= "{{ url_for('static', filename='css/base.css') }}"/>
+        <link rel="stylesheet" type="text/css" href= "{{ url_for('static', filename='css/sticky.css') }}"/>
+        <link rel="stylesheet" type="text/css" href= "{{ url_for('static', filename='css/apprise.css') }}"/>
+    {% endblock %}
+    {% block css_ext %}  {% endblock %}
+    
+    {% block js %}
+        <script type=text/javascript  src="{{ url_for('static', filename='js/jquery-1.7.2.js') }}"></script>
+        <script type=text/javascript  src="{{ url_for('static', filename='js/sticky.js') }}"></script>
+        <script type=text/javascript  src="{{ url_for('static', filename='js/apprise.js') }}"></script>
+        <script type=text/javascript>
+            $SCRIPT_ROOT = {{ request.script_root|tojson|safe }};
+        </script>
+        <script type=text/javascript src="{{ url_for('static', filename='js/base.js') }}"></script>
+    {% endblock %}
+    {% block js_ext %}  {% endblock %}
+
+    {% block head_ext %}
+        <meta http-equiv="pragma" content="no-cache">
+        <meta http-equiv="expires" content="0">
+    {% endblock %}
+
+{% endblock %}
+</head>
+
+<body>
+{% block body%}
+    <div id="menu">
+        <a href="{{url_for('home.case')}}">Test Case</a> |
+        <a href="{{url_for('home.cycle')}}">Test Cycle</a> |
+        <a href="{{url_for('home.result')}}">Test Result</a> |
+        <a href="{{url_for('home.automatos')}}">Automatos Web</a> |
+        <a href="{{url_for('home.about')}}">About</a>
+    </div>
+    {% block container%}
+    <div id="container">
+
+        {% block header %}
+            {% include "metanav.html" %}
+        {% endblock%}
+
+        <h2></h2>
+        {% block main%}
+
+        {% endblock %}
+    </div>
+    {% endblock %}
+{% endblock %}
+</body>
+
+
+</html>
+

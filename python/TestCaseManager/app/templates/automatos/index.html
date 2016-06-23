@@ -1,0 +1,89 @@
+{% extends "layout.html"%}
+{% set title = "Automatos " %}
+
+{% from "macros/_forms.html" import render_errors %}
+
+{% block main %}
+<h1> TestBed List </h1>
+
+<table border="5">
+  <tbody>
+    <thead>
+      <tr>
+          <td> Name</td>
+          <td> Author</td>
+          <td> Date</td>
+      </tr>
+    </thead>
+  {% for bed in beds %}
+    <tr> 
+        <td> <a href="{{ url_for("automatos.view", testType="testbed", id=bed.id) }}">{{ bed.filename }}</a> </td>
+        <td> {{ bed.author.username  }}</td>
+        <td>{{ bed.date_created  }} </td>
+    </tr>
+  {% endfor %}
+
+<div class="add">
+    <form id="search" method="GET" action="{{ url_for('automatos.add', bed_or_set="TestBed") }}">
+    <input id="submit" type="submit" value="Add TestBed" >
+    </form>
+</div>
+
+  </tbody>
+</table>
+
+<h1> TestSet List </h1>
+<table border="5">
+  <tbody>
+    <thead>
+      <tr>
+          <td> Name</td>
+          <td> Author</td>
+          <td> Date</td>
+      </tr>
+    </thead>
+    
+  {% for set in sets %}
+    <tr>
+        <td><a href="{{url_for("automatos.view", testType="testset", id=set.id)}}">{{ set.filename }}</a></td>
+        <td> {{ set.author.username  }}  </td>
+        <td>{{ set.date_created  }}  </td>
+    </tr>
+  {% endfor %}
+
+<div class="add">
+    <form id="search" method="GET" action="{{ url_for('automatos.add', bed_or_set="TestSet") }}">
+    <input id="submit" type="submit" value="Add TestSet" >
+    </form>
+</div>
+
+
+  </tbody>
+</table>
+
+<h2></h2>
+<div class="execute_submit">
+    <h1>Execute Automatos</h1>
+    
+    <form method="POST" action="{{url_for('automatos.index' )}}">
+        {{ form.hidden_tag() }}
+        {{ render_errors(form.testbed) }}
+        {{ form.testbed.label }}
+        {{ form.testbed(col=20) }}
+        <br>
+        {{ render_errors(form.testset) }}
+        {{ form.testset.label }}
+        {{ form.testset(col=20) }}
+        <br>
+        {{ render_errors(form.testclient) }}
+        {{ form.testclient.label }}
+        {{ form.testclient(col=20) }}
+        <br>
+        {{ form.submit }}
+    
+    </form>
+</div>
+
+
+{% endblock %}
+

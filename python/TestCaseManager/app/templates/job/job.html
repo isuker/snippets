@@ -1,0 +1,41 @@
+{% extends "layout.html"%}
+{% set title = "Job Detail" %}
+
+<script type="text/JavaScript">
+function timedRefresh(timeoutPeriod) {
+    setTimeout("location.reload(true);",timeoutPeriod);
+}
+</script>
+
+{% block main %}
+
+<h1> Automatos Result </h1>
+
+<li>
+        ID:  <a href="{{ url_for("job.view", job_id=job.id) }}">{{ job.id }}</a> <br>
+        TestBed: <a href="{{ url_for("automatos.view", testType="TestBed",id=job.testbed_id) }}">{{ job.testbed.filename }}</a> <br>
+        TestSet: <a href="{{ url_for("automatos.view", testType="testSet",id=job.testset_id) }}">{{ job.testset.filename }}</a> <br>
+        Author: <td>{{ job.author.username  }} <br>
+        Date: {{ job.date_started  }} <br>
+        Status: {{ job.status  }} <br>
+        Link: <a href={{job.link}}>{{ job.link  }}</a> <br>
+<p>
+<a href="javascript:timedRefresh(2000)">Refresh this page in 2 seconds</a><br />
+</p>
+
+<form id="search" method="GET" action="{{ url_for("job.view", job_id=job.id) }}">
+<input id="submit" type="submit" value="Refresh Job Status" >
+</form>
+<form id="search" method="POST" action="{{ url_for("job.cancel", job_id=job.id) }}">
+<input id="submit" type="submit" value="Cancel This Job" >
+</form>
+
+
+<h2>Test Log Console</h2>
+  {% for line in output %}
+      {{line}} <br>
+  {% endfor %}
+
+
+</li>
+{% endblock %}

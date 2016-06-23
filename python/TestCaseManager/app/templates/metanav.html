@@ -1,0 +1,13 @@
+<div class="metanav">
+{% if current_user.is_authenticated() %}
+   	 Welcome, {{ current_user.name }} 
+   	<a href="{{ url_for('user.home', username=current_user.username) }}">{{ current_user.username }}</a>
+   	| <a href="{{ url_for('account.logout') }}">Logout</a>
+    {% if current_user.is_admin %}
+    | <a href="{{ url_for('admin.index') }}">Admin</a>
+    {% endif%}
+{% else %}
+    <a href="{{ url_for('account.login') }}">Login</a>
+{% endif %}
+| <a href="{{ url_for('home.help') }}">Help</a>
+</div>

@@ -1,0 +1,31 @@
+{% extends "layout.html"%}
+{% set title = "Test Case " %}
+
+
+{% block main %}
+<h1> Test Case List </h1>
+
+  <ul class=case>
+<table>
+  {% for case in cases %}
+    <li><h2>Name: <a href="{{case.url}}">{{ case.name }}</a></h2> 
+            Author: {{ case.author.username  }}  <br>
+            Date: {{ case.date_created  }}  <br>
+            Description: {{ case.description|safe }}
+  {% else %}
+    <li><em>Unbelievable.  No Any Test Case here so far</em>
+  {% endfor %}
+  </ul>
+
+</table>
+  
+<div class="add">
+    <form id="search" method="GET" action="{{ url_for('case.add') }}">
+    <input id="submit" type="submit" value="Add New Case" >
+    </form>
+</div>
+
+
+
+{% endblock %}
+

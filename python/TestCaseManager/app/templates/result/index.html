@@ -1,0 +1,33 @@
+{% extends "layout.html"%}
+{% set title = "Test Case " %}
+
+
+{% block main %}
+<h1> Test Result List </h1>
+
+  <ul class=result>
+<table>
+  {% for result in results %}
+    <li><h2>Name: <a href="{{result.url}}">{{ result.name }}</a></h2> 
+            Author: {{ result.author.username  }}  <br>
+            Date: {{ result.date_created  }}  <br>
+            Test Case: <a href="{{result.case.url}}">{{result.case.name}}</a> <br>
+            Log Link: <a href="{{result.link}}">{{result.link}}</a> <br>
+            Status: {{ result.status}} 
+  {% else %}
+    <li><em>Unbelievable.  No Any Test Result here so far</em>
+  {% endfor %}
+  </ul>
+
+</table>
+  
+<div class="add">
+    <form id="search" method="GET" action="{{ url_for('result.add') }}">
+    <input id="submit" type="submit" value="Add New Test Result" >
+    </form>
+</div>
+
+
+
+{% endblock %}
+

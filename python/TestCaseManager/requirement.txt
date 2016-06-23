@@ -1,0 +1,10 @@
+Flask-Babel
+Flask-Cache
+Flask-Login
+Flask-Mail
+Flask-Principal
+Flask-Script
+Flask-Sqlalchemy
+Flask-WTF
+markdown
+blinker

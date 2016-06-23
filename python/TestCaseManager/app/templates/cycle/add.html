@@ -1,0 +1,35 @@
+{% extends "layout.html"%}
+{% set title = "Add Test Cycle" %}
+
+{% from "macros/_forms.html" import render_errors %}
+
+{% block main %}
+
+
+<div class="cycle_submit">
+    <h1>Add New Test Cycle</h1>
+    
+    <form method="POST" action="{{url_for('cycle.add' )}}">
+        {{ form.hidden_tag() }}
+        {{ render_errors(form.name) }}
+        {{ form.name.label }}
+        {{ form.name(size=50, placeholder="Test Cycle Name in 50 chars") }}
+        <br>
+        {{ render_errors(form.description) }}
+        {{ form.description.label }}
+        {{ form.description(rows=10, cols=50) }}
+        <br>
+        {{ render_errors(form.build) }}
+        {{ form.build.label }}
+        {{ form.build(cols=100, placeholder="upc-Mainline.0-201308291101") }}
+
+        {{ form.submit }}
+    
+    </form>
+</div>
+
+
+
+
+{% endblock %}
+

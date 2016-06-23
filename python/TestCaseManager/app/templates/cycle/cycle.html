@@ -1,0 +1,33 @@
+{% extends "layout.html"%}
+{% set title = "Test Cycle " %}
+
+
+{% block main %}
+<h1> Test Cycle Details </h1>
+
+  <ul class=cycle>
+    <li><h2>Name: {{ cycle.name }}</h2> 
+            Author: {{ cycle.author.username  }}  <br>
+            Date: {{ cycle.date_created  }}  <br>
+            Build: {{ cycle.build  }}  <br>
+            Description: {{ cycle.description|safe|markdown }}
+  </ul>
+
+  
+<div class="add">
+    <form id="search" method="GET" action="{{ url_for('cycle.edit', cycle_id=cycle.id) }}">
+    <input id="submit" type="submit" value="Edit this Cycle" >
+    </form>
+    <form id="search" method="POST" action="{{ url_for('cycle.delete', cycle_id=cycle.id) }}">
+    <input id="submit" type="submit" value="Delete this Cycle" >
+    <br>
+    </form>
+    <form id="search" method="GET" action="{{ url_for('cycle.add') }}">
+    <input id="submit" type="submit" value="Add New Cycle" >
+    </form>
+</div>
+
+
+
+{% endblock %}
+

@@ -1,0 +1,31 @@
+{% extends "layout.html"%}
+{% set title = "Add Test Case" %}
+
+{% from "macros/_forms.html" import render_errors %}
+
+{% block main %}
+
+
+<div class="case_submit">
+    <h1>Add New Test Case</h1>
+    
+    <form method="POST" action="{{url_for('case.add' )}}">
+        {{ form.hidden_tag() }}
+        {{ render_errors(form.name) }}
+        {{ form.name.label }}
+        {{ form.name(size=50, placeholder="Test Case Name in 50 chars") }}
+        <br>
+        {{ render_errors(form.description) }}
+        {{ form.description.label }}
+        {{ form.description(rows=10, cols=50) }}
+
+        {{ form.submit }}
+    
+    </form>
+</div>
+
+
+
+
+{% endblock %}
+

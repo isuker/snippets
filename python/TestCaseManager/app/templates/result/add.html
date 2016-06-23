@@ -1,0 +1,43 @@
+{% extends "layout.html"%}
+{% set title = "Add Test Result" %}
+
+{% from "macros/_forms.html" import render_errors %}
+
+{% block main %}
+
+
+<div class="result_submit">
+    <h1>Add New Test Result</h1>
+    
+    <form method="POST" action="{{url_for('result.add' )}}">
+        {{ form.hidden_tag() }}
+        {{ render_errors(form.name) }}
+        {{ form.name.label }}
+        {{ form.name(size=50, placeholder="Test Result Name in 50 chars") }}
+        <br>
+        {{ render_errors(form.case) }}
+        {{ form.case.label }}
+        {{ form.case(cols=10) }}
+        <br>
+        {{ render_errors(form.link) }}
+        {{ form.link.label }}
+        {{ form.link(cols=100 ,placeholder="http://") }}
+        <br>
+        {{ render_errors(form.loop) }}
+        {{ form.loop.label }}
+        {{ form.loop(cols=3 ,placeholder="30 loop if test pass") }}
+        <br>
+        {{ render_errors(form.status) }}
+        {{ form.status.label }}
+        {{ form.status(cols=10) }}
+        <br>
+        {{ form.submit }}
+    
+    </form>
+</div>
+
+
+
+
+{% endblock %}
+

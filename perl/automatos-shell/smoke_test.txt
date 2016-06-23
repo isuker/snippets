@@ -1,0 +1,35 @@
+# Test automatos shell command
+help
+list vnx
+option debug INFO
+
+# Test normal perl expression
+$a = 1;
+print $a
+print $a == 1;
+print $a == 2;
+
+use File::Spec;
+@paths = File::Spec->path()
+p join(",",@paths)
+
+
+# Test module operation
+print @hosts
+print @vplexes
+
+# Test Automatos API
+my @vms = $vplexes[0]->find(type=>'VirtualVolume', criteria=>{name=>qr/Ray/i})
+print @vms
+x @vms
+
+# Test Find CMD 
+find $vplexes[1] Extent name=>qr/Ray/i 1
+find $vplexes[1] Volume system_id=>qr/VPD83T3/i 1
+
+
+# Test Reload Module
+reload Automatos::Wrapper::Tool::Vplex
+# Or use full filename
+reload /SSIE-Interop-Dev/Automatos/Framework/Dev/lib/Automatos/Wrapper/Tool/Vplex.pm
+

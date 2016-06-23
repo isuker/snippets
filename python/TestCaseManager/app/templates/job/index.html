@@ -1,0 +1,38 @@
+{% extends "layout.html"%}
+{% set title = "TestJob List" %}
+
+
+{% block main %}
+
+<h1> Automatos Execute List </h1>
+<table border="5">
+  <tbody>
+    <thead>
+      <tr>
+          <td> ID</td>
+          <td> TestBed</td>
+          <td> TestSet</td>
+          <td> Author</td>
+          <td> Date</td>
+          <td> Status</td>
+          <td> Link</td>
+      </tr>
+    </thead>
+  {% for job in jobs %}
+    <tr> 
+        <td> <a href="{{ url_for("job.view", job_id=job.id) }}">{{ job.id }}</a> </td>
+        <td> <a href="{{ url_for("automatos.view", testType="TestBed",id=job.testbed_id) }}">{{ job.testbed.filename }}</a> </td>
+        <td> <a href="{{ url_for("automatos.view", testType="testSet",id=job.testset_id) }}">{{ job.testset.filename }}</a> </td>
+        <td>{{ job.author.username  }}</td>
+        <td>{{ job.date_started  }} </td>
+        <td>{{ job.status  }} </td>
+        <td><a href={{job.link}}>{{ job.link  }}</a> </td>
+    </tr>
+  {% endfor %}
+
+  </tbody>
+</table>
+
+
+{% endblock %}
+
