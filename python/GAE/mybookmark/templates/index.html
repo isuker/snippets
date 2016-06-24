@@ -1,0 +1,67 @@
+<html>
+    <head>
+        <title> 我的网上书签</title>
+        <link rel="stylesheet" type="text/css" href="static/index.css" />
+    </head>
+
+<body>
+
+<h1> 我的个人网上书签 </h1>
+
+<table>
+<tr>
+<td>
+<form action="/add" method="get">
+    <div><input type="submit" value="添加新的书签"></div>
+</form>
+<td>
+
+<td>
+<form action="/del" method="post">
+    <div><input type="submit" value="删除所有书签"></div>
+</form>
+<td>
+
+<tr>
+</table>
+
+<table border="0" width="100%" cellpadding="10">
+<tr>
+<td width="50%" valign="top">
+
+<h2>书签列表 ({{count}})</h2>
+<ul>
+{% for bookmark in bookmark_list %}
+
+    {% if bookmark.shared  %}
+        <li>网址: <a href="{{ bookmark.address }}">{{ bookmark.title }}</a></li>
+        <li>分类: {{ bookmark.tag }}</li>
+        <li>收藏日期: {{ bookmark.date }}</li>
+        <li>详细信息: {{ bookmark.description }}</li>
+        <p></p>
+    {% else %}
+        <p></p>
+    {% endif %}
+
+<form action="/del" method="get">
+<input type="checkbox" name="remove_id" value={{bookmark.post_id}}>
+<input type="submit" value="删除">
+</form>
+
+{% endfor %}
+</ul>
+</td>
+
+<td width="50%" valign="top">
+<h2>热门标签</h2>
+{% for bookmark in bookmark_list %}
+    <i> {{ bookmark.tag }} </i>
+{% endfor %}
+<td>
+</tr>
+</table>
+
+
+</body>
+</html>
+

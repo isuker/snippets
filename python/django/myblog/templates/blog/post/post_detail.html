@@ -1,0 +1,49 @@
+{% extends "blog/base.html" %}
+
+{% load comments %}
+
+{% block title %} <title>{{ post.title }} - 大企鹅看小世界</title> {% endblock %} 
+
+{% block content %}
+
+    <div class="post" id="post-{{ post.id }}">
+
+    <h2><a href="{{ post.get_absolute_url }}" rel="bookmark" title="Permanent Link to {{ post.title }}">{{ post.title }}</a></h2>
+    <div class="date"> Posted on {{ post.date.day }} {{ post.date|date:"M" }} {{ post.date.year }} by {{ post.get_author }}
+
+
+{% get_comment_count for post as comment_count %}
+<div class="comms">
+<p>{{ comment_count }} comments</p>
+</div>
+
+</div> <!-- date -->
+
+    <div class="clear"></div>
+    <div class="content">{{post.content}} </div>
+
+    <br clear="all" />
+
+{% get_comment_list for post  as comment_list %}
+{% for comment in comment_list %}
+<p>Posted by: {{ comment.user_name }} on {{ comment.submit_date }}</p>
+...
+<p>Comment: {{ comment.comment }}</p>
+...
+    <br clear="all" />
+{% endfor %}
+
+
+    <br clear="all" />
+    <div class="clear"><p>有话要说：</p></div>
+    <!-- show comments from -->
+    {% render_comment_form for post %}
+
+
+</div> <!-- blog -->
+
+{% endblock %}
+
+
+
+

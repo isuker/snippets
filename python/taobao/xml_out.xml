@@ -1,0 +1,37 @@
+<?xml version='1.0'?>
+<CIM CIMVERSION="2.0" DTDVERSION="2.0">
+  <MESSAGE ID="10" PROTOCOLVERSION="1.0">
+    <SIMPLEREQ>
+      <IMETHODCALL NAME="Associators">
+        <LOCALNAMESPACEPATH>
+          <NAMESPACE NAME="root" />
+          <NAMESPACE NAME="virt" />
+        </LOCALNAMESPACEPATH>
+        <IPARAMVALUE NAME="IncludeQualifiers">
+          <VALUE>FALSE</VALUE>
+        </IPARAMVALUE>
+        <IPARAMVALUE NAME="IncludeClassOrigin">
+          <VALUE>FALSE</VALUE>
+        </IPARAMVALUE>
+        <IPARAMVALUE NAME="ObjectName">
+          <INSTANCENAME CLASSNAME="HPVM_ComputerSystem">
+            <KEYBINDING NAME="Name">
+              <KEYVALUE VALUETYPE="string">1111111111</KEYVALUE>
+            </KEYBINDING>
+            <KEYBINDING NAME="CreationClassName">
+              <KEYVALUE VALUETYPE="string">
+                                HPVM_ComputerSystem
+                           </KEYVALUE>
+            </KEYBINDING>
+          </INSTANCENAME>
+        </IPARAMVALUE>
+        <IPARAMVALUE NAME="AssocClass">
+          <CLASSNAME NAME="HPVM_HostedDependency" />
+        </IPARAMVALUE>
+        <IPARAMVALUE NAME="ResultClass">
+          <CLASSNAME NAME="HPVM_HostSystem" />
+        </IPARAMVALUE>
+      </IMETHODCALL>
+    </SIMPLEREQ>
+  </MESSAGE>
+</CIM>

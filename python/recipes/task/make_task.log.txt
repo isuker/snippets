@@ -1,0 +1,75 @@
+[ray@fedora TestCaseManager]$ ./make_task.py worker -l info
+......
+
+
+ -------------- celery@fedora v3.1.10 (Cipater)
+---- **** ----- 
+--- * ***  * -- Linux-3.13.6-200.fc20.x86_64-x86_64-with-fedora-20-Heisenbug
+-- * - **** --- 
+- ** ---------- [config]
+- ** ---------- .> app:         <class 'flask.app.Flask'>:0x2938790
+- ** ---------- .> transport:   amqp://guest@localhost:5672//
+- ** ---------- .> results:     db+sqlite:///db/job-results.sqlite
+- *** --- * --- .> concurrency: 4 (prefork)
+-- ******* ---- 
+--- ***** ----- [queues]
+ -------------- .> celery           exchange=celery(direct) key=celery
+                
+
+[tasks]
+  . tasks.sns_share
+
+[2014-03-27 22:54:48,187: INFO/MainProcess] Connected to amqp://guest@127.0.0.1:5672//
+[2014-03-27 22:54:48,228: INFO/MainProcess] mingle: searching for neighbors
+[2014-03-27 22:54:49,259: INFO/MainProcess] mingle: all alone
+[2014-03-27 22:54:49,363: WARNING/MainProcess] celery@fedora ready.
+[2014-03-27 22:55:06,908: INFO/MainProcess] Received task: tasks.sns_share[b6bcd345-c2ec-4aae-8dc4-b6c635e12c05]
+[2014-03-27 22:55:06,909: WARNING/Worker-1] sns_share start to say hello, world
+[2014-03-27 22:55:07,086: INFO/MainProcess] Task tasks.sns_share[b6bcd345-c2ec-4aae-8dc4-b6c635e12c05] succeeded in 0.177770589999s: 'hello, world'
+
+[ray@fedora TestCaseManager]$ python
+Python 2.7.5 (default, Feb 19 2014, 13:47:28) 
+[GCC 4.8.2 20131212 (Red Hat 4.8.2-7)] on linux2
+Type "help", "copyright", "credits" or "license" for more information.
+>>> import make_task
+>>> result = make_task.sns_share.delay("hello, world")
+>>> result.get()
+'hello, world'
+>>> 
+
+###################### code ###########################
+#!/usr/bin/python
+#coding:utf-8
+import requests
+from celery import Celery, platforms
+from flask import Flask
+utf8 = lambda u: u.encode('utf-8')
+
+
+app = Flask(__name__)
+
+def make_celery(app):
+    celery = Celery(app.__class__)
+    platforms.C_FORCE_ROOT = True
+    # load setting.py config
+    celery.config_from_object('setting')
+    #celery.conf.update(app.config)
+    TaskBase = celery.Task
+    class ContextTask(TaskBase):
+        abstract = True
+        def __call__(self, *args, **kwargs):
+            with app.app_context():
+                return TaskBase.__call__(self, *args, **kwargs)
+    celery.Task = ContextTask
+    return (app,celery)
+
+app, celery = make_celery(app)
+
+@celery.task(name="tasks.sns_share")
+def sns_share(words):
+    print "sns_share start to say %s" %words
+    return words
+
+if __name__ == '__main__':
+    with app.app_context():
+        celery.start()

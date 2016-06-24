@@ -1,0 +1,36 @@
+
+{% if info %}
+     <p>{{ info}}</p><hr>
+{% else %}
+{% endif %}
+
+
+
+<form action="/add" method="post">
+
+<div>
+<label>网页地址: <input type="text" name="address" /></label>
+</div>
+
+<div>
+<label>网页标题: <input type="text" name="title" /></label>
+</div>
+
+<div>
+<label>标签分类: <input type="text" name="tag" /></label>
+</div>
+
+<div> 
+<label> 网页描述: 
+<textarea rows="3" cols="20" name="description"></textarea>
+</label>
+</div>
+
+<div>
+<label>共享设置: </label>
+<input type="radio" checked="checked" name="shared" value="public">公开
+<input type="radio" name="shared" value="private">私有
+</div>
+
+ <div><input type="submit" value="提交新的书签"></div>
+</form>

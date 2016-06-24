@@ -1,0 +1,64 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="zh" lang="zh">
+
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    {% if theme %}<link rel="stylesheet" href="{{ MEDIA_URL }}blog/themes/{{ theme }}/style.css" />{% else %}
+    <link rel="stylesheet" href="{{ MEDIA_URL }}blog/themes/default/style.css" /> {% endif %}
+
+<script type="text/javascript" src="{{ MEDIA_URL }}blog/themes/default/tabber.js"></script>
+<link rel="stylesheet" href="{{ MEDIA_URL }}blog/themes/default/tab.css" type="text/css" media="screen" />
+
+    
+    {% block title %}{% if title %}<title>{{ title }} - 大企鹅看小世界</title>{% else %}<title>大企鹅看小世界</title>{% endif %}{% endblock %}
+  </head>
+
+<body>
+<div id="wrapper">
+  <div id="header">
+
+    <div id="logo">
+    <h1><a href="/"> 大企鹅看小世界</a></h1>
+    <h2>我的学习想法点滴></h2>
+    </div><!--logo-->
+
+    <div id="logo_right">
+    <p>BIG LOGO </p>
+    </div><!--logo_right-->
+
+    <br clear="all" />
+
+	  <a href="/rss" class="rss"><img src="{{ MEDIA_URL }}images/rss.gif" border="0" alt="RSS" /></a>
+  </div><!--header-->
+
+<div id="nav_left"><!-- --></div>
+
+<div id="navigation">
+  <ul id="menu">
+      <li class="current_page_item"><a href="/">首页</a></li>
+      <li class="current_page_item"><a href="/code">代码</a></li>
+      <li class="current_page_item"><a href="/about">关于</a></li>
+  </ul>
+</div><!-- end of navigation -->
+
+<div id="nav_right"><!-- --></div>
+<br clear="all" />
+
+
+      <!-- blog content -->
+      <div id="blog">
+      {% block content %}{% endblock %}
+      </div>
+
+{% include "blog/sidebar.html" %}
+<br clear="all" />
+</div><!--wrapper-->
+{% include "blog/footer.html" %}
+
+
+
+
+

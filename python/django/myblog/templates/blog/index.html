@@ -1,0 +1,38 @@
+{% extends "blog/base.html" %}
+
+{% load comments %}
+{% block content %}
+
+{% if latest_post_list %}
+
+    {% for post in latest_post_list %}
+
+        <div class="post" id="post-{{ post.id }}">
+        
+        <h2><a href="{{ post.get_absolute_url }}" rel="bookmark" title="Permanent Link to {{ post.title }}">{{ post.title }}</a></h2>
+        <div class="date"> Posted on {{ post.date.day }} {{ post.date|date:"M" }} {{ post.date.year }} by {{ post.get_author }}
+        {% get_comment_count for post as comment_count %}
+        <div class="comms"><p>{{ comment_count }} comments</p></div>
+
+        </div><!--post-->
+        
+        
+        <div class="meta"> <p>Tags: tag1, tag2, tag3</p>
+                <p>Categories :{{ post.category.title }} </p>
+        </div><!--meta-->
+        
+        <div class="content">{{post.content}}
+        <a href="{{ post.get_absolute_url }}" rel="bookmark" title="Permanent Link to {{ post.title }}">...Read More &raquo;</a></div>
+        
+        </div><!--post.content-->
+
+    {% endfor %}
+
+
+{% else %}
+
+    <p>No posts are available.</p>
+
+{% endif %}
+
+{% endblock %}

@@ -27,14 +27,20 @@ sub load_testbed
     require Automatos::ParseXml;
     require Automatos::Resource;
 
+    my %testBedInfo = Automatos::ParseXml::getTestbed(filename=>$testBedfile);
     eval {
-        my %testBedInfo = Automatos::ParseXml::getTestbed(filename=>$testBedfile);
         $resourceObj = Automatos::Resource->new(%testBedInfo);
         $resourceObj->init();
     };
     if($@) {
-        print "[ERROR] Load test bed resource failed\n";
-        die $@;
+        if ($verbose) {
+           warn $@;
+        }
+    }
+
+    unless($resourceObj) {
+        print "[ERROR] Load test bed resource issues...\n";
+        exit 1;
     }
 
     print "\n";
@@ -63,8 +69,8 @@ sub load_testbed
         print '####All switches variable: @switches' ,"@switches\n";
     }
 
+    print "\n";
     Automatos::AutoLog->setScreenLogLevel($gSettings{debug});
-
 }
 
 sub precmd
@@ -248,7 +254,9 @@ sub do_reload
     if ($module_full_filename =~ /::/) {
         $module_full_filename = Module::Util::module_fs_path($module);
     }
-    print "[DEBUG] Start reload package \"$module_full_filename\"\n";
+    if ($verbose){
+        print "[DEBUG] Start reload package \"$module_full_filename\"\n";
+    }
     $refresh->refresh_module($module_full_filename);
     print "Reload Package \"$module\" done\n";
 
@@ -414,6 +422,7 @@ sub default
 ###############################################
 our (@hosts, @celerras, @vnxes, @vnxs, @vplexes, @switches);
 our ($resourceObj, $self, @objects);
+our $verbose = 0;
 
 sub usage
 {
@@ -425,6 +434,7 @@ sub usage
     print "     -l|--level:   Debug Level (INFO, DEBUG, CMD, TRACE) while loading test bed file \n";
     print "     -i|--shell:   Enter Interactive Mode after script \n";
     print "     -h|--help:    Print this help \n";
+    print "     -v|--verbose: Verbose mode \n";
     exit 1;
 }
 
@@ -435,7 +445,8 @@ GetOptions(
     'level|l=s'   => \$level,
     'package|p=s'   => \$package,
     'shell|i'       => \$shell,
-    'help|h'       => \$help
+    'help|h'       => \$help,
+    'verbose|v'       => \$verbose
 );
 
 if ($help) {

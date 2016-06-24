@@ -1,0 +1,7 @@
+1. finish function list_all_packages.
+   Goto 'http://pkgs.fedoraproject.org/gitweb' webpage to search all pkg name.
+   shortage is long time to load that webpage. Is there better way?
+
+2. For those package not found in fedora git, how to handle them?
+   Maybe setup a public git/svn repo to save package spec file. 
+   We users can upload/modify spec file. A client/server mode are needed??

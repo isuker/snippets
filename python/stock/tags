@@ -1,0 +1,191 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.8	//
+AliveKeeper	PyWapFetion/AliveKeeper.py	/^class AliveKeeper(Thread):$/;"	c
+Cache	PyWapFetion/Cache.py	/^class Cache(object):$/;"	c
+Cache	PyWapFetion/Fetion.py	/^from Cache import Cache$/;"	i
+CookieJar	PyWapFetion/Fetion.py	/^from cookielib import CookieJar$/;"	i
+DATABASE_ENGINE	settings.py	/^DATABASE_ENGINE = "FILE" # 'postgresql', 'mysql', 'sqlite3'$/;"	v
+DATABASE_NAME	settings.py	/^DATABASE_NAME = ".\/favor-stock.txt"$/;"	v
+DATABASE_PASSWORD	settings.py	/^DATABASE_PASSWORD = ''$/;"	v
+DATABASE_USER	settings.py	/^DATABASE_USER = ''$/;"	v
+DBUtil	database.py	/^class DBUtil(object):$/;"	c
+DEFAULT_PRICE	stock.py	/^    DEFAULT_PRICE = ("0","0","0","0","0")$/;"	v	class:Stock
+Emailer	report.py	/^class Emailer(Report):$/;"	c
+FAVOR_STOCK_FILE	database.py	/^    FAVOR_STOCK_FILE = "favor-pool.txt"$/;"	v	class:FileUtil
+FavorStock	stock.py	/^class FavorStock(Stock):$/;"	c
+FavorStockPool	manager.py	/^class FavorStockPool(object):$/;"	c
+Fetion	PyWapFetion/Fetion.py	/^class Fetion(object):$/;"	c
+Fetion	PyWapFetion/__init__.py	/^from Fetion import Fetion$/;"	i
+FetionCsrfTokenFail	PyWapFetion/Errors.py	/^class FetionCsrfTokenFail(Exception):$/;"	c
+FetionNotYourFriend	PyWapFetion/Errors.py	/^class FetionNotYourFriend(Exception):$/;"	c
+Fetioner	report.py	/^class Fetioner(Report):$/;"	c
+FileUtil	database.py	/^class FileUtil(DBUtil):$/;"	c
+GMAIL_SMTP_SERVER	report.py	/^    GMAIL_SMTP_SERVER = "smtp.gmail.com"$/;"	v	class:Emailer
+GzipFile	PyWapFetion/Fetion.py	/^from gzip import GzipFile$/;"	i
+HTTPCookieProcessor	PyWapFetion/Fetion.py	/^from urllib2 import Request, build_opener, HTTPHandler, HTTPCookieProcessor$/;"	i
+HTTPHandler	PyWapFetion/Fetion.py	/^from urllib2 import Request, build_opener, HTTPHandler, HTTPCookieProcessor$/;"	i
+InvalidParam	manager.py	/^class InvalidParam(Exception):$/;"	c
+MAX_COUNT	settings.py	/^MAX_COUNT = 5$/;"	v
+MODES	manager.py	/^    MODES = ["CLI", "DEAMON"]$/;"	v	class:StockManager
+MysqlUtil	database.py	/^class MysqlUtil(DBUtil):$/;"	c
+NOTIFY_ENABLE	settings.py	/^NOTIFY_ENABLE = False    # True or False$/;"	v
+NOTIFY_PASSWORD	settings.py	/^NOTIFY_PASSWORD = "XXXXXXX"$/;"	v
+NOTIFY_RECEIVERS	settings.py	/^NOTIFY_RECEIVERS = "xxxxxxxxx0"$/;"	v
+NOTIFY_TYPE	settings.py	/^NOTIFY_TYPE = "FETION"   # valid value is "FETION" or "EMAIL"$/;"	v
+NOTIFY_USER	settings.py	/^NOTIFY_USER = "138XXXXXXXX"$/;"	v
+OptionParser	manager.py	/^from optparse import OptionParser$/;"	i
+Report	report.py	/^class Report(object):$/;"	c
+Request	PyWapFetion/Fetion.py	/^from urllib2 import Request, build_opener, HTTPHandler, HTTPCookieProcessor$/;"	i
+SMTP_163_SERVER	report.py	/^    SMTP_163_SERVER = "smtp.163.com" $/;"	v	class:Emailer
+SUPPORT_SMTP	report.py	/^    SUPPORT_SMTP = ["163", "gmail"]$/;"	v	class:Emailer
+Stock	stock.py	/^class Stock(object):$/;"	c
+StockManager	manager.py	/^class StockManager(object):$/;"	c
+StringIO	PyWapFetion/Fetion.py	/^    from StringIO import StringIO$/;"	i
+StringIO	PyWapFetion/Fetion.py	/^    from cStringIO import StringIO$/;"	i
+StringIO	database.py	/^import StringIO$/;"	i
+TIME_DELAY	settings.py	/^TIME_DELAY = 30$/;"	v
+Thread	PyWapFetion/AliveKeeper.py	/^from threading import Thread$/;"	i
+_163	report.py	/^    _163 = Emailer("XXXXXXXXX@163.com", "password")$/;"	v
+__all__	PyWapFetion/AliveKeeper.py	/^__all__ = ['AliveKeeper']$/;"	v
+__all__	PyWapFetion/Cache.py	/^__all__ = ['Cache']$/;"	v
+__all__	PyWapFetion/Fetion.py	/^__all__ = ['Fetion']$/;"	v
+__author__	PyWapFetion/__init__.py	/^__author__ = 'whtsky'$/;"	v
+__def__	report.py	/^    def __def__(self):$/;"	m	class:Emailer	file:
+__def__	report.py	/^    def __def__(self):$/;"	m	class:Fetioner	file:
+__enter__	PyWapFetion/Fetion.py	/^    __enter__ = lambda self: self$/;"	v	class:Fetion
+__init__	PyWapFetion/AliveKeeper.py	/^    def __init__(self, fetion, sleeptime=240, Daemon=True, start=True):$/;"	m	class:AliveKeeper
+__init__	PyWapFetion/Cache.py	/^    def __init__(self, path):$/;"	m	class:Cache
+__init__	PyWapFetion/Fetion.py	/^    def __init__(self, mobile, password, status='0', cachefile='Fetion.cache'):$/;"	m	class:Fetion
+__init__	database.py	/^    def __init__(self, *args, **kwargs):$/;"	m	class:DBUtil
+__init__	database.py	/^    def __init__(self, filename=FAVOR_STOCK_FILE , *args, **kwargs):$/;"	m	class:FileUtil
+__init__	manager.py	/^    def __init__(self, *args, **kwargs):$/;"	m	class:FavorStockPool
+__init__	manager.py	/^    def __init__(self, *args, **kwargs):$/;"	m	class:StockManager
+__init__	report.py	/^    def __init__(self, account, password):$/;"	m	class:Emailer
+__init__	report.py	/^    def __init__(self, account, password):$/;"	m	class:Fetioner
+__init__	report.py	/^    def __init__(self, account, password, *arg, **kwargs):$/;"	m	class:Report
+__init__	stock.py	/^    def __init__(self, *args, **kwargs):$/;"	m	class:FavorStock
+__init__	stock.py	/^    def __init__(self, code, name="", price=DEFAULT_PRICE):$/;"	m	class:Stock
+__license__	PyWapFetion/__init__.py	/^__license__ = 'MIT'$/;"	v
+__name__	PyWapFetion/__init__.py	/^__name__ = 'PyWapFetion'$/;"	v
+__setitem__	PyWapFetion/Cache.py	/^    __setitem__ = lambda self, k, id: self.dict.__setitem__(k, id)$/;"	v	class:Cache
+__str__	stock.py	/^    def __str__(self):$/;"	m	class:Stock	file:
+__version__	PyWapFetion/__init__.py	/^__version__ = '0.9.2'$/;"	v
+__website__	PyWapFetion/__init__.py	/^__website__ = 'http:\/\/github.com\/whtsky\/PyWapFetion'$/;"	v
+_f	common.py	/^def _f(args):$/;"	f
+_f	stock.py	/^from common import _s, _f, u$/;"	i
+_getcsrf	PyWapFetion/Fetion.py	/^    def _getcsrf(self, id=''):$/;"	m	class:Fetion
+_getid	PyWapFetion/Fetion.py	/^    def _getid(self, mobile):$/;"	m	class:Fetion
+_login	PyWapFetion/Fetion.py	/^    def _login(self):$/;"	m	class:Fetion
+_s	common.py	/^def _s(args):$/;"	f
+_s	database.py	/^from common import _s$/;"	i
+_s	stock.py	/^from common import _s, _f, u$/;"	i
+add	database.py	/^    def add(self, stock):$/;"	m	class:FileUtil
+add	manager.py	/^    def add(self, stock):$/;"	m	class:FavorStockPool
+addfriend	PyWapFetion/Fetion.py	/^    def addfriend(self, mobile, name='xx'):$/;"	m	class:Fetion
+alive	PyWapFetion/Fetion.py	/^    def alive(self):$/;"	m	class:Fetion
+base64	PyWapFetion/Fetion.py	/^import base64$/;"	i
+build_opener	PyWapFetion/Fetion.py	/^from urllib2 import Request, build_opener, HTTPHandler, HTTPCookieProcessor$/;"	i
+buyable	stock.py	/^    buyable  = property(fget=lambda self: self.__buy)$/;"	v	class:FavorStock
+changestatus	PyWapFetion/Fetion.py	/^    def changestatus(self, status='0'):$/;"	m	class:Fetion
+checkPoint	stock.py	/^    def checkPoint(self):$/;"	m	class:FavorStock
+clear	stock.py	/^    def clear(self):$/;"	m	class:FavorStock
+codekey	PyWapFetion/Fetion.py	/^codekey = compile('name="codekey" value="(.*?)">')$/;"	v
+common	report.py	/^import common$/;"	i
+compile	PyWapFetion/Fetion.py	/^from re import compile$/;"	i
+console	common.py	/^console = logging.StreamHandler()$/;"	v
+counter	stock.py	/^    counter  = property(fget=lambda self: self.__counter) $/;"	v	class:FavorStock
+csrf_token	PyWapFetion/Fetion.py	/^csrf_token = compile('<postfield name="csrfToken" value="(\\w+)"\/>')$/;"	v
+database	manager.py	/^import database$/;"	i
+datefmt	common.py	/^        datefmt='%m-%d %H:%M',$/;"	v
+deletefriend	PyWapFetion/Fetion.py	/^    def deletefriend(self, id):$/;"	m	class:Fetion
+dump	PyWapFetion/Cache.py	/^from marshal import dump, load$/;"	i
+exec_command	manager.py	/^    def exec_command(self, parser):$/;"	m	class:StockManager
+exist	manager.py	/^    def exist(self, code):$/;"	m	class:FavorStockPool
+filemode	common.py	/^        filemode='a')$/;"	v
+filename	common.py	/^        filename='mystock.log',$/;"	v
+findid	PyWapFetion/Fetion.py	/^    def findid(self, mobile):$/;"	m	class:Fetion
+format	common.py	/^        format='%(asctime)s %(name)-8s %(levelname)-8s %(message)s',$/;"	v
+formatter	common.py	/^formatter = logging.Formatter('%(asctime)s %(name)-8s: %(levelname)-8s %(message)s')$/;"	v
+fresh	manager.py	/^    def fresh(self, stock=None):$/;"	m	class:FavorStockPool
+fu	database.py	/^    fu = FileUtil()$/;"	v
+get_pool	database.py	/^    def get_pool(self):$/;"	m	class:FileUtil
+idfinder	PyWapFetion/Fetion.py	/^idfinder = compile('touserid=(\\d*)')$/;"	v
+idfinder2	PyWapFetion/Fetion.py	/^idfinder2 = compile('name="internalid" value="(\\d+)"')$/;"	v
+is_working_time	manager.py	/^    def is_working_time(self):$/;"	m	class:StockManager
+load	PyWapFetion/Cache.py	/^from marshal import dump, load$/;"	i
+load	database.py	/^    def load(self):$/;"	m	class:DBUtil
+load	database.py	/^    def load(self):$/;"	m	class:FileUtil
+load_confgiure	manager.py	/^    def load_confgiure(self):$/;"	m	class:StockManager
+log	manager.py	/^log = logging.getLogger("Manager")$/;"	v
+log	report.py	/^log = logging.getLogger("Reporter")$/;"	v
+logging	common.py	/^import logging$/;"	i
+logging	manager.py	/^import logging$/;"	i
+logging	report.py	/^import logging$/;"	i
+login	report.py	/^    def login(self):$/;"	m	class:Emailer
+login	report.py	/^    def login(self):$/;"	m	class:Fetioner
+logout	PyWapFetion/Fetion.py	/^    def logout(self, *args):$/;"	m	class:Fetion
+main	manager.py	/^def main():$/;"	f
+notified	stock.py	/^    def notified(self, plus=True):$/;"	m	class:FavorStock
+open	PyWapFetion/Fetion.py	/^    def open(self, url, data=''):$/;"	m	class:Fetion
+option_parser	manager.py	/^def option_parser():$/;"	f
+os	database.py	/^        import tempfile,shutil,os$/;"	i
+os	settings.py	/^import os.path$/;"	i
+output	database.py	/^    def output(self):$/;"	m	class:FileUtil
+output	manager.py	/^    def output(self):$/;"	m	class:FavorStockPool
+output	stock.py	/^    def output(self):$/;"	m	class:Stock
+path	settings.py	/^import os.path$/;"	i
+pool	manager.py	/^    pool = []$/;"	v	class:FavorStockPool
+query	manager.py	/^    def query(self):$/;"	m	class:FavorStockPool
+query	manager.py	/^    def query(self, code=[]):$/;"	m	class:StockManager
+recycle	manager.py	/^    recycle = []$/;"	v	class:FavorStockPool
+remove	database.py	/^    def remove(self, code):$/;"	m	class:FileUtil
+remove	manager.py	/^    def remove(self, code):$/;"	m	class:FavorStockPool
+report	manager.py	/^import report$/;"	i
+run	PyWapFetion/AliveKeeper.py	/^    def run(self):$/;"	m	class:AliveKeeper
+run	manager.py	/^    def run(self, *args):$/;"	m	class:StockManager
+run_cli	manager.py	/^    def run_cli(self, parser):$/;"	m	class:StockManager
+s	database.py	/^    s = stock.FavorStock("sh600112")$/;"	v
+sellable	stock.py	/^    sellable = property(fget=lambda self: self.__sell)$/;"	v	class:FavorStock
+send	PyWapFetion/Fetion.py	/^    def send(self, mobile, message, sm=False):$/;"	m	class:Fetion
+send	PyWapFetion/__init__.py	/^def send(mobile, password, to, message):$/;"	f
+send	report.py	/^    def send(self, receivers=[], message=""):$/;"	m	class:Emailer
+send	report.py	/^    def send(self, receivers=[], message=""):$/;"	m	class:Fetioner
+send	report.py	/^    def send(self, receivers=[], message=""):$/;"	m	class:Report
+send2me	report.py	/^    def send2me(self, message=""):$/;"	m	class:Fetioner
+send2self	PyWapFetion/Fetion.py	/^    def send2self(self, message, time=None):$/;"	m	class:Fetion
+send2self	PyWapFetion/__init__.py	/^def send2self(mobile, password, message):$/;"	f
+sendBYid	PyWapFetion/Fetion.py	/^    def sendBYid(self, id, message, sm=False):$/;"	m	class:Fetion
+setBuyed	stock.py	/^    def setBuyed(self, delay=10):$/;"	m	class:FavorStock
+setGoalPrice	stock.py	/^    def setGoalPrice(self, price):$/;"	m	class:FavorStock
+setPrice	stock.py	/^    def setPrice(self, price):$/;"	m	class:Stock
+setSelled	stock.py	/^    def setSelled(self):$/;"	m	class:FavorStock
+settings	manager.py	/^    import settings$/;"	i
+shutil	database.py	/^        import tempfile,shutil,os$/;"	i
+signal	manager.py	/^import signal$/;"	i
+signal_handler	manager.py	/^    def signal_handler(signal, frame):$/;"	f	function:main
+sleep	PyWapFetion/AliveKeeper.py	/^from time import sleep$/;"	i
+smtplib	report.py	/^import smtplib$/;"	i
+socket	report.py	/^import socket$/;"	i
+stock	database.py	/^import stock$/;"	i
+stock	manager.py	/^import stock$/;"	i
+stock	stock.py	/^    stock = FavorStock("sh600111")$/;"	v	class:FavorStock
+syncdb	manager.py	/^    def syncdb(self):$/;"	m	class:StockManager
+sys	manager.py	/^    import sys$/;"	i
+sys	manager.py	/^import time,sys$/;"	i
+sys	report.py	/^import sys$/;"	i
+sys	settings.py	/^import sys$/;"	i
+tempfile	database.py	/^        import tempfile,shutil,os$/;"	i
+time	manager.py	/^import time,sys$/;"	i
+toString	stock.py	/^    def toString(self, sep=","):$/;"	m	class:FavorStock
+toString	stock.py	/^    def toString(self, sep=","):$/;"	m	class:Stock
+u	common.py	/^def u(s, encoding):$/;"	f
+u	stock.py	/^from common import _s, _f, u$/;"	i
+update	stock.py	/^    def update(self):$/;"	m	class:Stock
+urlencode	PyWapFetion/Fetion.py	/^from urllib import urlencode$/;"	i
+urllib2	stock.py	/^import urllib2$/;"	i
+with_statement	PyWapFetion/Cache.py	/^from __future__ import with_statement$/;"	i
+with_statement	PyWapFetion/__init__.py	/^from __future__ import with_statement$/;"	i

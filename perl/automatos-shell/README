@@ -30,7 +30,7 @@ Usage:  automatos-shell.pl -t testbed.xml [-s script [--shell]]
      -l|--level:   Debug Level (INFO, DEBUG, CMD, TRACE) while loading test bed file
      -i|--shell:   Enter Interactive Mode after script
      -h|--help:    Print this help
-
+     -v|--verbose: Verbose mode
 
 Don's forget to add the automatos library path to Perl running time.
 i.e

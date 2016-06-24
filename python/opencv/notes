@@ -1,0 +1,5 @@
+1. How to install?
+
+sudo yum install opencv-python opencv
+
+See official docs: http://opencv.willowgarage.com/documentation/python/index.html

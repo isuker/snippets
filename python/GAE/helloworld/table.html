@@ -1,0 +1,28 @@
+<html><body>
+
+<h1>List {{count}} Taobao Products</h1>
+
+<hr>
+<table border="1">
+<tr>
+  <th>number</th>
+  <th>title</th>
+  <th>nick</th>
+  <th>pic_url</th>
+  <th>price</th>
+  <th>click_url</th>
+</tr>
+{% for product in product_list %}
+<tr>
+  <td>{{forloop.counter}}</td>
+  <td>{{ product.title }}</td>
+  <td>{{ product.nick }}</td>
+  <td><a href={{ product.pic_url }}> {{ product.pic_url }} </a></td>
+  <td>{{ product.price }}</td>
+  <td><a href={{ product.click_url }}> {{ product.click_url }} </a></td>
+</tr>
+{% endfor %}
+</table>
+
+</body></html>
+

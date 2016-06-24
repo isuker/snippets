@@ -1,0 +1,73 @@
+<div id="sidebar">
+
+<ul>
+  <li>
+  <h2 class="author">关于作者</h2>
+  <p><img src="{{ MEDIA_URL }}images/author.jpg" border="0" alt="Author" class="authimg" />本人的 blog 大部分都是自己学习记录, 想法和文档， 如有转载，请指明出处，并mail to chenrano2002@163.com 告知转载地址。谢谢!
+  <a href="/about">Read More &raquo;</a></p>
+  </li>
+  <p>Advertising</p>
+  <img src="{{ MEDIA_URL }}images/banner.jpg"/>
+  <li>
+
+<br />
+ <br />
+  <!--tab show: recent posts and comments -->
+<div class="tabber">
+
+	<div class="tabbertab">
+	
+	<h2>Recent Posts</h2>
+	<ul>
+	list recent posts
+	</ul>
+	</div>
+
+	<div class="tabbertab">
+	<h2>Recent Comments</h2>
+	<ul>
+	list recent comments
+	</ul>
+	</div>
+
+	<div class="tabbertab">
+	<h2>Archives</h2>
+	<ul>
+	get_archives
+	</ul>
+	</div>
+
+</div>
+ 
+  </li>
+</ul>
+
+<br/>
+
+<div class="sidebar1">
+	<ul>
+<p><img src="{{ MEDIA_URL }}images/categories.jpg"/>
+文章目录列表</p>
+
+      {% block category_list %}{% endblock %}
+	</ul>
+</div>
+
+
+<div class="sidebar2">
+	<ul>
+<p><img src="{{ MEDIA_URL }}images/categories.jpg"/>	
+链接收藏<p>
+      {% block link_list %}{% endblock %}
+	</ul>
+
+	<ul>
+<p><img src="{{ MEDIA_URL }}images/categories.jpg"/>	
+Meata<p>
+<a href="/admin">登录</a>
+	</ul>	
+</div>
+
+
+<br clear="all" />
+</div><!--sidebar-->

@@ -1,0 +1,74 @@
+###############################
+# KILLALL FLAG is True        #
+###############################
+[ray@localhost thread]$ python first.py 
+T0[7] starts running
+T0: is start? False
+T0:  wait for main thread say start
+T1[4] starts running
+T1: is start? False
+T1:  wait for main thread say start
+T2[1] starts running
+T2: is start? False
+T2:  wait for main thread say start
+T3[7] starts running
+T3: is start? False
+T3:  wait for main thread say start
+T4[6] starts running
+T4: is start? False
+T4:  wait for main thread say start
+MAIN: ok, mutil-work start
+T0: bababa...doing something
+T1: bababa...doing something
+T2: bababa...doing something
+T3: bababa...doing something
+T4: bababa...doing something
+T2: done! pls MAIN kill others
+MAIN: True, just exit main thread 
+stop thread MainThread[-1217091904]
+stop thread Thread-1[-1220256960]
+stop thread Thread-2[-1229980864]
+stop thread Thread-5[-1257252032]
+stop thread Thread-4[-1248859328]
+exit entry
+
+
+
+###############################
+# KILLALL FLAG is False       #
+###############################
+[ray@localhost thread]$ python first.py 
+T0[1] starts running
+T0: is start? False
+T0:  wait for main thread say start
+T1[4] starts running
+T1: is start? False
+T1:  wait for main thread say start
+T2[6] starts running
+T2: is start? False
+T2:  wait for main thread say start
+T3[7] starts running
+T3: is start? False
+T3:  wait for main thread say start
+T4[2] starts running
+T4: is start? False
+T4:  wait for main thread say start
+MAIN: ok, mutil-work start
+T0: bababa...doing something
+T1: bababa...doing something
+T2: bababa...doing something
+T3: bababa...doing something
+T4: bababa...doing something
+T0: done! pls MAIN kill others
+MAIN: True, just exit main thread 
+stop thread MainThread[-1216014656]
+stop thread Thread-2[-1228932288]
+stop thread Thread-5[-1256203456]
+stop thread Thread-4[-1247810752]
+stop thread Thread-3[-1239418048]
+exit entry
+T4: done! pls MAIN kill others
+T1: done! pls MAIN kill others
+T2: done! pls MAIN kill others
+T3: done! pls MAIN kill others
+

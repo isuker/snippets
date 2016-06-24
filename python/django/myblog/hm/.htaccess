@@ -1,0 +1,17 @@
+# Use PHP5 Single php.ini as default
+#AddHandler application/x-httpd-php5s .php
+
+AddHandler fcgid-script .fcgi
+
+RewriteEngine On
+
+RewriteCond %{HTTP_HOST} ^http://blog.drawbigfoot.com
+RewriteRule ^(.*)$ "http\:\/\/blog.drawbigfoot\.com/$1" [R=301,L]
+
+# don't forget to link admin media directory to local
+# ln -s ~/lib/python2.4/site-packages/django/contrib/admin/media/ .
+RewriteRule ^(media/.*)$ - [L]
+#RewriteRule ^(static/.*)$ - [L]
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteRule ^(.*)$ cgi-bin/myblog.fcgi/$1 [QSA,L]
+
