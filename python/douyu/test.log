@@ -19,3 +19,46 @@ $ ./danmu.py
 06-29 01:08 __main__ INFO   chatmsg     海深海蓝<567060711>     come Chengdu i'll treat you hotpo
 06-29 01:08 __main__ INFO   chatmsg     墨碎年华050<165523315>  ！！！！！！！！！
 06-29 01:08 __main__ INFO   chatmsg     米勒先seng<252958513>   looking forward it
+06-30 08:19:57 __main__ INFO   Show Danmu in Room: 'http://www.douyu.com/240879'
+06-30 08:19:57 __main__ DEBUG  start send message: type@=loginreq/roomid@=/240879/
+06-30 08:19:57 __main__ DEBUG  response data: {'username': '', 'ps': '0', 'npv': '0', 'best_dlev': '0', 'live_stat': '0', 'roomgroup': '0', 'nrc': '1405732781', 'nickname': '', 'userid': '0', 'cur_lev': '0', 'sessionid': '0', 'pg': '0', 'sid': '70223', 'is_illegal': '0', 'now': '0', 'type': 'loginres', 'ill_ts': '0', 'es': '0', 'ill_ct': ''}
+06-30 08:19:57 __main__ DEBUG  built message is type@=keeplive/tick@=1467245997/
+06-30 08:19:57 __main__ DEBUG  built message is type@=joingroup/rid@=240879/gid@=-9999/
+06-30 08:19:57 __main__ DEBUG  start send message: type@=keeplive/tick@=1467245997/
+06-30 08:19:57 __main__ DEBUG  start send message: type@=joingroup/rid@=240879/gid@=-9999/
+06-30 08:19:57 __main__ DEBUG  response data: {'tick': '1467245997', 'type': 'keeplive', 'uc': '32677'}
+06-30 08:20:00 __main__ DEBUG  response data: {'el': '', 'gt': '3', 'uid': '13316371', 'nn': '\xe5\x8d\x97\xe5\xae\x9d\xe5\xae\x9d\xe7\x9a\x84\xe5\xa4\xa7\xe8\x80\x81\xe5\x85\xac\xe5\x92\xa9\xe4\xb8\xb6', 'level': '26', 'bdlv': '3', 'dc': '1', 'egtt': '0', 'dlv': '3', 'rid': '240879', 'type': 'uenter', 'ic': 'avatar'}
+06-30 08:20:00 __main__ DEBUG  heart beat is ok, retry in 40 second later
+06-30 08:20:06 __main__ DEBUG  response data: {'el': '', 'uid': '38908581', 'nn': 'onemonent', 'cid': 'e8d43faab0254df4a615050000000000', 'level': '21', 'bdlv': '3', 'egtt': '0', 'rid': '240879', 'txt': '\xe6\x88\x91\xe8\xa7\x89\xe5\xbe\x979\xe7\x82\xb9\xe8\xb5\xb7\xe6\x9d\xa5\xe5\xb7\xae\xe4\xb8\x8d\xe5\xa4\x9a\xe4\xba\x86', 'type': 'chatmsg', 'ic': 'avatar'}
+06-30 08:20:06 __main__ INFO   chatmsg         onemonent<38908581, 21>  我觉得9点起来差不多了 
+06-30 08:20:08 __main__ DEBUG  response data: {'el': '', 'uid': '38908581', 'nn': 'onemonent', 'cid': 'e8d43faab0254df4ac15050000000000', 'level': '21', 'bdlv': '3', 'egtt': '0', 'rid': '240879', 'txt': '\xe7\xb4\xaf\xe5\x95\x8a', 'type': 'chatmsg', 'ic': 'avatar'}
+06-30 08:20:08 __main__ INFO   chatmsg         onemonent<38908581, 21>  累啊                          
+06-30 08:20:09 __main__ DEBUG  response data: {'el': '', 'uid': '2910019', 'nn': 'renzhe5948', 'cid': 'e8d43faab0254df4af15050000000000', 'level': '3', 'egtt': '0', 'rid': '240879', 'txt': '\xe5\xa3\xb0\xe9\x9f\xb3\xe4\xb8\x8d\xe5\xa5\xbd\xe5\x90\xac', 'type': 'chatmsg', 'ic': 'avatar', 'ct': '2'}
+06-30 08:20:09 __main__ INFO   chatmsg        renzhe5948<2910019, 3>  声音不好听                 
+06-30 08:20:21 __main__ DEBUG  response data: {'el': '', 'uid': '23720634', 'nn': 'yanliang3622689', 'level': '11', 'egtt': '0', 'ic': 'avatar', 'type': 'uenter', 'rid': '240879'}
+06-30 08:20:21 __main__ INFO   uenter	yanliang3622689<23720634 ,11>	Enter this room
+06-30 08:20:28 __main__ DEBUG  response data: {'el': '', 'uid': '32837589', 'nn': '\xe4\xb8\x8d\xe6\x80\x92\xe8\x87\xaa\xe5\xa8\x81ing', 'cid': 'e8d43faab0254df4c215050000000000', 'level': '10', 'egtt': '0', 'rid': '240879', 'txt': '\xe4\xb8\xbb\xe6\x92\xad\xe5\x92\x8c\xe6\x88\x91\xe4\xb8\x80\xe6\xa0\xb7\xe9\x83\xbd\xe6\x98\xaf\xe9\xa9\xb4\xe9\x95\xbf\xe8\x84\xb8', 'type': 'chatmsg', 'ic': 'avatar', 'ct': '2'}
+06-30 08:20:28 __main__ INFO   chatmsg   不怒自威ing<32837589, 10>  主播和我一样都是驴长脸
+06-30 08:20:37 __main__ DEBUG  response data: {'el': '', 'uid': '38908581', 'nn': 'onemonent', 'cid': 'e8d43faab0254df4cc15050000000000', 'level': '21', 'bdlv': '3', 'egtt': '0', 'rid': '240879', 'txt': '\xe3\x80\x82\xe3\x80\x82\xe3\x80\x82', 'type': 'chatmsg', 'ic': 'avatar'}
+06-30 08:20:37 __main__ INFO   chatmsg         onemonent<38908581, 21>  。。。                       
+06-30 08:20:38 __main__ DEBUG  response data: {'uid': '13336756', 'type': 'srres', 'gid': '-9999', 'exp': '50', 'rid': '240879', 'nickname': '\xe9\xb8\xa1\xe5\xa9\x86\xe5\xa4\xa7\xe7\x85\x9e\xe7\xac\x94'}
+06-30 08:20:38 __main__ DEBUG  Unknown message type: srres
+06-30 08:20:39 __main__ DEBUG  response data: {'el': '', 'uid': '9459115', 'nn': 'liyuexuan', 'level': '14', 'egtt': '0', 'ic': 'avatar', 'type': 'uenter', 'rid': '240879'}
+06-30 08:20:39 __main__ INFO   uenter	liyuexuan<9459115 ,14>	Enter this room
+06-30 08:20:40 __main__ DEBUG  built message is type@=keeplive/tick@=1467246040/
+06-30 08:20:40 __main__ DEBUG  start send message: type@=keeplive/tick@=1467246040/
+06-30 08:20:40 __main__ DEBUG  response data: {'tick': '1467246040', 'type': 'keeplive', 'uc': '32677'}
+06-30 08:20:40 __main__ DEBUG  Unknown message type: keeplive
+06-30 08:20:45 __main__ DEBUG  response data: {'el': '', 'uid': '2910019', 'nn': 'renzhe5948', 'cid': 'e8d43faab0254df4d615050000000000', 'level': '3', 'egtt': '0', 'rid': '240879', 'txt': '\xe5\x87\xba\xe4\xba\x8e\xe7\xa4\xbc\xe8\xb2\x8c', 'type': 'chatmsg', 'ic': 'avatar', 'ct': '2'}
+06-30 08:20:45 __main__ INFO   chatmsg        renzhe5948<2910019, 3>  出于礼貌                    
+06-30 08:20:45 __main__ DEBUG  response data: {'el': '', 'uid': '15099811', 'nn': '\xe5\x8f\xaa\xe7\x88\xb1\xe6\xb5\xb7\xe4\xb8\x8d\xe7\x88\xb1\xe6\xb5\xaa\xe7\x9a\x84\xe5\xb0\xbe\xe5\xb7\xb4', 'level': '11', 'egtt': '0', 'ic': 'avatar', 'type': 'uenter', 'rid': '240879'}
+06-30 08:20:45 __main__ DEBUG  heart beat is ok, retry in 40 second later
+06-30 08:20:52 __main__ DEBUG  response data: {'el': '', 'uid': '2910019', 'nn': 'renzhe5948', 'cid': 'e8d43faab0254df4ec15050000000000', 'level': '3', 'egtt': '0', 'rid': '240879', 'txt': '\xe8\xbf\x98\xe6\x98\xaf \xe9\x9e\xa5\xe5\x95\xa6\xe4\xb8\x80\xe4\xb8\x8b', 'type': 'chatmsg', 'ic': 'avatar', 'ct': '2'}
+06-30 08:20:52 __main__ INFO   chatmsg        renzhe5948<2910019, 3>  还是 鞥啦一下             
+06-30 08:20:59 __main__ DEBUG  response data: {'el': '', 'uid': '21406158', 'nn': '\xe6\xb1\x9f\xe5\xb1\xb1\xe9\xbb\x91\xe5\x93\xa5', 'level': '15', 'egtt': '0', 'ic': 'avatar', 'type': 'uenter', 'rid': '240879'}
+06-30 08:20:59 __main__ INFO   uenter	江山黑哥<21406158 ,15>	Enter this room
+06-30 08:20:59 __main__ DEBUG  response data: {'el': '', 'gt': '3', 'uid': '13316371', 'nn': '\xe5\x8d\x97\xe5\xae\x9d\xe5\xae\x9d\xe7\x9a\x84\xe5\xa4\xa7\xe8\x80\x81\xe5\x85\xac\xe5\x92\xa9\xe4\xb8\xb6', 'cid': 'e8d43faab0254df40d16050000000000', 'level': '26', 'bdlv': '3', 'dc': '1', 'egtt': '0', 'dlv': '3', 'rid': '240879', 'txt': '[emot:dy005]', 'type': 'chatmsg', 'ic': 'avatar'}
+06-30 08:20:59 __main__ INFO   chatmsg  南宝宝的大老公咩丶<13316371, 26>  [emot:dy005]                    
+06-30 08:21:02 __main__ DEBUG  response data: {'el': '', 'uid': '44032443', 'nn': '\xe4\xb8\x80\xe4\xb8\xaa\xe4\xb9\x96\xe4\xb9\x96\xe7\x9a\x84\xe4\xba\xba', 'cid': 'e8d43faab0254df41416050000000000', 'level': '10', 'egtt': '0', 'rid': '240879', 'txt': '\xe5\x8d\x97\xe5\xa6\xb9\xef\xbc\x8c\xe4\xbd\xa0\xe4\xb8\xad\xe5\x88\x86\xe6\xb2\xa1\xe5\x88\x86\xe5\x9d\x87\xe5\x8c\x80', 'type': 'chatmsg', 'ic': 'avatar', 'ct': '2'}
+06-30 08:21:02 __main__ INFO   chatmsg  一个乖乖的人<44032443, 10>  南妹，你中分没分均匀  
+06-30 08:21:04 __main__ INFO    ...You Pressed CTL+C ,exit... 

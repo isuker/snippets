@@ -5,6 +5,7 @@ import time
 import socket
 import logging
 import threading
+import signal
 
 import sys
 reload(sys)
@@ -34,19 +35,34 @@ class DanMuResponse(object):
 
     def __init__(self, response):
         self.content = str(response)
+        log.debug("response data: %s" % self.data)
+
+    @staticmethod
+    def _convert_msg(msg):
+        while msg.find('@A') != -1:
+            msg = msg.replace('@A', '@')
+        while msg.find('@S') != -1:
+            msg = msg.replace('@S', '/')
+        return msg
 
     @property
     def data(self):
         _data = {}
-        parts = self.content.split("/")
+        _covert = self._covert_msg(self.content)
+        parts = _covert.split("/")
         for p in parts:
-            if p:
-                (key, value) = p.split('@=')
-                _data[key] = value
-        log.debug("response data: %s" % _data)
+            if p.find('@=') != -1:
+                try:
+                    (key, value) = p.split('@=', 1)
+                    # TODO: 'list@=uid@=15537701'
+                    _data[key] = value
+                except ValueError as e:
+                    log.debug('split %s failed' % p)
         return _data
 
     def __getattr__(self, item):
+        if item == "_covert_msg":
+            return self._convert_msg
         try:
             return self.data[item]
         except KeyError:
@@ -57,7 +73,7 @@ class DanMuResponse(object):
         return repr(self.data)
 
     def has_error(self):
-        return 'error' in self.data
+        return 'error' in self.content
 
     def raise_if_error(self):
         if not self.has_error():
@@ -71,22 +87,30 @@ class DanMuResponse(object):
         raise ResponseError(msg)
 
     def _show_chat_msg(self):
-        message = "\t".join([self.type, self.nn]) + '<' + self.uid + \
-                  self.level + '>\t' + self.txt
-        log.info(message)
+        #message = "\t".join([self.type, self.nn]) + '<' + \
+        #          ",".join([self.uid, self.level]) + '>\t' + self.txt
+        #log.info(message)
+        log.info("{0:>6}  {1:>16}<{2}, {3}>  {4:<32}".
+                 format(self.type, self.nn, self.uid, self.level, self.txt))
 
     def _show_user_enter(self):
-        message = "\t".join([self.type, self.nn]) + '<' + self.uid + \
-                  self.level + '>\t' + "Enter this room"
+        message = "\t".join([self.type, self.nn]) + '<' + \
+                  " ,".join([self.uid, self.level]) +  '>\t' + "Enter this room"
         log.info(message)
 
     def _show_gift(self):
         message = self.type + self.gn + "<" + self.gc + ">\t" + \
-                  "\t".join[self.sn, self.dn, self.drid]
+                  "\t".join([self.sn, self.dn, self.drid])
         log.info(message)
 
     def _show_rank_list(self):
-        log.info("TODO")
+        log.info("ranklist TODO")
+
+    def _show_online_gift(self):
+        log.info("onlinegift TODO")
+
+    def _show_send_gift(self):
+        log.info("dgb TODO")
 
     def display(self):
         if self.type == 'chatmsg':
@@ -99,8 +123,12 @@ class DanMuResponse(object):
             self._show_gift()
         elif self.type == 'ranklist':
             self._show_rank_list()
+        elif self.type == 'onlinegift':
+            self._show_online_gift()
+        elif self.type == 'dgb':
+            self._show_send_gift()
         else:
-            raise ResponseError("Unknown message type: %s" % msg_type)
+            log.debug("Unknown message type: %s" % self.type)
 
 
 class DanMuMsg(object):
@@ -126,7 +154,7 @@ class DanMuClient(object):
         self.server = server
         self.port = port
 
-        self._is_live = False
+        self._is_live = True
         self._build_conn()
 
     def __del__(self):
@@ -194,19 +222,19 @@ class DanMuClient(object):
             log.debug("Send message failed with %s" % e)
 
 
-    def heartbeat(self, interval=10):
-        msg = self._build_msg(type='keeplive', tick=int(time.time()))
-        self.send(msg)
-        try:
-            self._parse_response()
-            self._is_live = True
-        except ResponseError as error:
-            log.error("Found heart beat error: %s" % error)
-            self._is_live = False
-
-        if self._is_live:
-            log.debug("hear beat is ok, retry in %d second" % interval)
-            time.sleep(interval)
+    def heartbeat(self, interval=40):
+        while self._is_live:
+            msg = self._build_msg(type='keeplive', tick=int(time.time()))
+            self.send(msg)
+            try:
+                self._parse_response()
+                self._is_live = True
+                log.debug("heart beat is ok, retry in %d second later" % interval)
+                time.sleep(interval)
+            except ResponseError as error:
+                log.error("Found heart beat error: %s" % error)
+                self._is_live = False
+        # End while
 
     def join_group(self, rid, gid=-9999):
         msg = self._build_msg(type='joingroup', rid=rid, gid=gid)
@@ -214,19 +242,26 @@ class DanMuClient(object):
         self._parse_response()
 
     def run(self, room_id):
-        url = "http://www.douyuyv.com/" + str(room_id)
-        log.info("Show Danmu in Room: '%s'" % url)
+        def signal_handler(signal, frame):
+            log.info(" ...You Pressed CTL+C ,exit... ")
+            self._is_live= False
+            self._thread.join()
+            sys.exit(1)
+        # end def
+        signal.signal(signal.SIGINT, signal_handler)
 
+        url = "http://www.douyu.com/" + str(room_id)
+        log.info("Show Danmu in Room: '%s'" % url)
         self.login(room_id)
 
         # start new thread to keep monitor heartbeat
-        t = threading.Thread(target=self.heartbeat)
+        self._thread = threading.Thread(target=self.heartbeat)
         #t.setDaemon(True)
-        t.start()
+        self._thread.start()
         self.join_group(room_id)
 
         # Now keeping get the danmu message
-        while True:
+        while self._is_live:
             message = self._parse_response()
             message.display()
 
@@ -234,11 +269,17 @@ class DanMuClient(object):
 
 
 if __name__ == "__main__":
-    logging.basicConfig(level=logging.INFO,
+    logging.basicConfig(level=logging.DEBUG,
             format='%(asctime)s %(name)-8s %(levelname)-6s %(message)s',
             filename='test.log',
-            datefmt = '%m-%d %H:%M')
+            datefmt = '%m-%d %H:%M:%S')
+
+    console = logging.StreamHandler()
+    formatter = logging.Formatter('%(asctime)s %(levelname)-6s %(message)s')
+    console.setFormatter(formatter)
+    console.setLevel(logging.INFO)
+    logging.getLogger('').addHandler(console)
 
     danmu = DanMuClient()
-    danmu.run(501999)
+    danmu.run(room_id=sys.argv[1])
 
