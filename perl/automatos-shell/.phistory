@@ -945,3 +945,5 @@ x if (1) {print "ok"}
 x keys $self
 x keys %$self
 
+cpan SOAP::Lite
+cpan MIME::Tools

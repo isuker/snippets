@@ -1,6 +1,7 @@
 # Test automatos shell command
 help
-list vnx
+list host
+list var
 option debug INFO
 
 # Test normal perl expression

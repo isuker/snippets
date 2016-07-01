@@ -10,6 +10,20 @@ use Getopt::Long;
 use Term::ReadLine;
 use Data::Dumper;
 
+our (@hosts, @celerras, @vnxes, @vnxs, @vplexes, @switches, @objects);
+our ($verbose, $resourceObj, $self);
+
+# Add new vars export to shell console
+our %VAR_MAP = (
+    'host'  => '@hosts',
+    'file'  => '@celerras',
+    'unified' => '@vnxes',
+    'vnx' => '@vnxs',
+    'vplex' => '@vplexes',
+    'switch' => '@switches',
+#   'package' => '$self'
+#   'find' => '@objects',
+);
 
 our %gSettings = (
 
@@ -44,29 +58,18 @@ sub load_testbed
     }
 
     print "\n";
-    @hosts = $resourceObj->getDevice(type => 'host');
-    if (@hosts) {
-        print '####All hosts variable: @hosts', " @hosts\n";
-    }
-    @celerras = $resourceObj->getDevice(type => 'file');
-    if (@celerras) {
-        print '####All celerras variable: @celerras', " @celerras\n";
-    }
-    @vnxes = $resourceObj->getDevice(type => 'unified');
-    if (@vnxes) {
-        print '####All vnxes variable: @vnxes', " @vnxes\n";
-    }
-    @vnxs = $resourceObj->getDevice(type => 'block');
-    if (@vnxs) {
-        print '####All vnxs variable: @vnxs', " @vnxs\n";
-    }
-    @vplexes = $resourceObj->getDevice(type => 'vplex');
-    if (@vplexes) {
-        print '####All vplexes variable: @vplexes', " @vplexes\n";
-    }
-    @switches = $resourceObj->getDevice(type => 'switch');
-    if (@switches) {
-        print '####All switches variable: @switches' ,"@switches\n";
+
+    my %device = $resourceObj->getDevice();
+    while (my ($type, $value) = each %VAR_MAP) {
+        if (defined $device{$type}) {
+            print "####All $type variable \"$value\" => @{$device{$type}}\n";
+            @hosts = @{$device{$type}} if $type eq 'host';
+            @celerras = @{$device{$type}} if $type eq 'file';
+            @vnxes = @{$device{$type}} if $type eq 'unified';
+            @vnxs = @{$device{$type}} if $type eq 'block';
+            @vplexes = @{$device{$type}} if $type eq 'vplex';
+            @switches = @{$device{$type}} if $type eq 'switch';
+        }
     }
 
     print "\n";
@@ -286,8 +289,9 @@ sub do_find
         if (@objects) {
             my $count = scalar(@objects);
             print '####Found objects variable: @objects. Total number: ', "$count\n";
+            $VAR_MAP{'find'} = '@objects';
         } else {
-            print "Not find any \"$type\" objects\n";
+            print "Not find any \"$type\" objects with \"$criteria\" criteria\n";
         }   
     }
 }
@@ -307,7 +311,7 @@ sub do_list
 {
     my $data = shift;
 
-    my $line = " ";
+    my $line = "";
 
     if ($data =~ /host/i) {
         $line = "Host    Type    IP\n";
@@ -344,6 +348,20 @@ sub do_list
             $line .= "    ".$spb->getHostObject()->{ipv4_address};
             $line .= "\n";
             $index++;
+        }
+    }
+    if ($data =~ /var/i) {
+        foreach my $value (values %VAR_MAP) {
+            if ($value eq '$self') {
+                my $ret = eval{$value};
+                $line .= "$value\t=> $ret\n";
+            } else {
+                # This time all should be array var
+                my @ret = eval($value);
+                if (@ret) {
+                    $line .= "$value\t=> @ret\n";
+                }
+            }
         }
     }
     
@@ -397,7 +415,7 @@ sub help
 
     print "Automatos Interactive Shell Usage:  \n";
     print "   print |p : print variable\n";
-    print "   list  |l [host|vnx|vnxe] : print HUTs/Array Info\n";
+    print "   list  |l [host|vnx|vnxe|var] : print HUTs/Array Info/available var\n";
     print "   view  |x : dump variable\n";
     print "   import [script]: load script file and then run line by line\n";
     print "   reload [module]: reload the module in runtime\n";
@@ -420,10 +438,6 @@ sub default
 ###############################################
 ############# Main Program ####################
 ###############################################
-our (@hosts, @celerras, @vnxes, @vnxs, @vplexes, @switches);
-our ($resourceObj, $self, @objects);
-our $verbose = 0;
-
 sub usage
 {
     print "Automatos Interactive Shell\n";
@@ -480,6 +494,7 @@ if (defined $package) {
         print $@;
     } else {
         print '####Package variable: $self', " $self\n";
+        $VAR_MAP{package} = '$self';
     }
 }
 

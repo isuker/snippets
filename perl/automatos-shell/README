@@ -62,6 +62,11 @@ All vnxs variable: @vnxs if exist
 All switches variable: @switches if exist
 All vplexes variable: @vplexes if exist
 
+The above variables can be also get from 'list var' in shell console:
+Automatos Shell> list var
+@vplexes    => Automatos::Device::Vplex=HASH(0x600d94248) Automatos::Device::Vplex=HASH(0x607776f68)
+@hosts    => Automatos::Device::Host::Unix::Linux=HASH(0x6050e0800)
+
 
 now you can run any perl/automatos code in the automatos shell
 
@@ -237,10 +242,10 @@ Run:
 Automatos Shell> x $self->summary($vplexes[0])
 2016/06/24 00:08:31   [INFO]     >     The Storgae-Volume Summary is:
 {
-  capacity => '51.8T',
+  size => '51.8TB',
   health => {
     out_of_date => '0',
-    storage_volumes => '1371',
+    storage_volume_count => '1371',
     unhealthy => '0'
   },
   use => {
@@ -250,7 +255,7 @@ Automatos Shell> x $self->summary($vplexes[0])
     used => '911'
   },
   vendor => {
-    DGC => '1371'
+    dgc => '1371'
   }
 }
 
