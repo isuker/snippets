@@ -18,15 +18,26 @@ p join(",",@paths)
 # Test module operation
 print @hosts
 print @vplexes
+list $vplexes[0]
+
+find $vplexes[0] Cluster
+list $objects[0]
+find $vplexes[0] Cluster '' 1
+list $objects[0]
+find $vplexes[0] Cluster "" 1
+list $objects[0]
 
 # Test Automatos API
 my @vms = $vplexes[0]->find(type=>'VirtualVolume', criteria=>{name=>qr/Ray/i})
 print @vms
 x @vms
+list $vms[0]
 
 # Test Find CMD 
 find $vplexes[1] Extent name=>qr/Ray/i 1
+list $objects[0]
 find $vplexes[1] Volume system_id=>qr/VPD83T3/i 1
+list $objects[0]
 
 
 # Test Reload Module

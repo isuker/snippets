@@ -7,6 +7,7 @@
 #use strict;
 use warnings;
 use Getopt::Long;
+use File::Spec;
 use Term::ReadLine;
 use Data::Dumper;
 
@@ -18,7 +19,7 @@ our %VAR_MAP = (
     'host'  => '@hosts',
     'file'  => '@celerras',
     'unified' => '@vnxes',
-    'vnx' => '@vnxs',
+    'block' => '@vnxs',
     'vplex' => '@vplexes',
     'switch' => '@switches',
 #   'package' => '$self'
@@ -105,7 +106,7 @@ sub parseline
 
     my ($cmd, $expr);
     # we need 2 part
-    my @cakes = split(" ",$line, 2);
+    my @cakes = split(/\s+/,$line, 2);
     if (scalar(@cakes) == 1) {
         $cmd  = "";
         $expr = $cakes[0];
@@ -270,11 +271,12 @@ sub do_find
     my $data = shift;
 
     # find <$object> <$type> <$criteria> <$force>
-    my ($device, $type, $criteria, $force) = split(" ", $data, 4);
+    my ($device, $type, $criteria, $force) = split(/\s+/, $data, 4);
 
-    if (!$force) {
-        $force = 0;
+    if ((not $criteria) or $criteria eq '\'\'' or $criteria eq '\"\"') {
+        $criteria = '';
     }
+    $force = 0 if not $force;
 
     my $cmd = "$device->find(type=>\"$type\", force_sync=>$force";
     if ($criteria) {
@@ -312,8 +314,7 @@ sub do_list
     my $data = shift;
 
     my $line = "";
-
-    if ($data =~ /host/i) {
+    if ($data =~ /^host$/i) {
         $line = "Host    Type    IP\n";
         my $index = 0;
         foreach (@hosts) {
@@ -322,8 +323,7 @@ sub do_list
             $line .= "\n";
             $index++;
         }
-    }
-    if ($data =~ /vnx/i) {
+    } elsif ($data =~ /^vnx/i) {
 
         my @array = @vnxs;
         $line = "VNX     Name    Model    Version    SPA    SPB\n";
@@ -349,11 +349,10 @@ sub do_list
             $line .= "\n";
             $index++;
         }
-    }
-    if ($data =~ /var/i) {
+    } elsif ($data =~ /^var$/i) {
         foreach my $value (values %VAR_MAP) {
             if ($value eq '$self') {
-                my $ret = eval{$value};
+                my $ret = eval($value);
                 $line .= "$value\t=> $ret\n";
             } else {
                 # This time all should be array var
@@ -362,6 +361,19 @@ sub do_list
                     $line .= "$value\t=> @ret\n";
                 }
             }
+        }
+    } else {
+        # try to list this variable if it's a Automatos Component.
+        my $isCom = eval {eval($data)->isa('Automatos::Component')};
+        if ($isCom) {
+            # Print object property
+            our %prop = eval($data)->getProperties();
+            $line .= do_view('\%prop');
+        } else {
+            if ($verbose) {
+                print "[ERROR] List $data failed: $@\n";
+            }
+            $line .= "$data is not an Automatos::Component object\n";
         }
     }
     
@@ -374,7 +386,7 @@ sub do_option
 {
     my $data = shift;
 
-    my ($cmd, $arg) = split(" ", $data, 2);
+    my ($cmd, $arg) = split(/\s+/, $data, 2);
 
     my $msg="";
     my $backupLogLevel = $gSettings{debug};
@@ -514,7 +526,7 @@ if (!$ENV{"HOME"}) {
     $ENV{"HOME"} = "";
 }
 
-my $historyfile = $ENV{"HOME"}.'.phistory';
+my $historyfile = File::Spec->join($ENV{"HOME"},'.phistory');
 my $term = new Term::ReadLine 'Automatos Shell';
 
 my $OUT = $term->OUT || \*STDOUT;
