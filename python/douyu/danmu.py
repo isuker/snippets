@@ -16,6 +16,8 @@ DANMU_PORT = 8601
 
 log = logging.getLogger(__name__)
 
+def rid_to_url(room_id):
+	return 'http://www.douyu.com/' + str(room_id)
 
 class InvalidParam(Exception):
     pass
@@ -35,7 +37,7 @@ class DanMuResponse(object):
 
     def __init__(self, response):
         self.content = str(response)
-        log.debug("response data: %s" % self.data)
+        self.data = self._to_dict(self.content)
 
     @staticmethod
     def _convert_msg(msg):
@@ -45,19 +47,24 @@ class DanMuResponse(object):
             msg = msg.replace('@S', '/')
         return msg
 
-    @property
-    def data(self):
+    def _to_dict(self, raw):
         _data = {}
-        _covert = self._covert_msg(self.content)
-        parts = _covert.split("/")
+        log.debug("response raw data: %s" % raw)
+        parts = raw.split('/')
         for p in parts:
-            if p.find('@=') != -1:
-                try:
-                    (key, value) = p.split('@=', 1)
-                    # TODO: 'list@=uid@=15537701'
-                    _data[key] = value
-                except ValueError as e:
-                    log.debug('split %s failed' % p)
+            try:
+                (key, value) = p.split('@=', 1)
+                value = self._convert_msg(value)
+
+                # The list@={body} will contain nested data
+                if 'ranklist' in raw and value.startswith('list'):
+                    raw_list = value.split('//')
+                    value = map(lambda x: self._to_dict(x), raw_list)
+                # end if
+                _data[key] = value
+            except ValueError as e:
+                log.debug("split string '%s' failed" % p)
+        log.debug("response data dict %s" % _data)
         return _data
 
     def __getattr__(self, item):
@@ -95,12 +102,12 @@ class DanMuResponse(object):
 
     def _show_user_enter(self):
         message = "\t".join([self.type, self.nn]) + '<' + \
-                  " ,".join([self.uid, self.level]) +  '>\t' + "Enter this room"
+                  ", ".join([self.uid, self.level]) +  '>\t' + "Enter this room"
         log.info(message)
 
     def _show_gift(self):
         message = self.type + self.gn + "<" + self.gc + ">\t" + \
-                  "\t".join([self.sn, self.dn, self.drid])
+                  " => ".join([self.sn, self.dn]) + ' In Room ' + rid_to_url(self.drid)
         log.info(message)
 
     def _show_rank_list(self):
@@ -122,13 +129,14 @@ class DanMuResponse(object):
             #log.info("Type Gift<Number> Sender Receiver Room")
             self._show_gift()
         elif self.type == 'ranklist':
+            #log.info("Type Room Sender Receiver Room")
             self._show_rank_list()
         elif self.type == 'onlinegift':
             self._show_online_gift()
         elif self.type == 'dgb':
             self._show_send_gift()
         else:
-            log.debug("Unknown message type: %s" % self.type)
+            log.debug("Ignore this unknown message type: %s" % self.type)
 
 
 class DanMuMsg(object):
@@ -195,7 +203,7 @@ class DanMuClient(object):
         return msg
 
     def _parse_response(self):
-        msg = self._session.recv(1024)
+        msg = self._session.recv(4096)
         content = msg[12:-1].decode('utf-8', 'ignore')
         response = DanMuResponse(content)
         response.raise_if_error()
@@ -246,17 +254,17 @@ class DanMuClient(object):
             log.info(" ...You Pressed CTL+C ,exit... ")
             self._is_live= False
             self._thread.join()
+            self.logout()
             sys.exit(1)
         # end def
         signal.signal(signal.SIGINT, signal_handler)
 
-        url = "http://www.douyu.com/" + str(room_id)
-        log.info("Show Danmu in Room: '%s'" % url)
+        log.info("Show Danmu in Room: '%s'" % rid_to_url(room_id))
         self.login(room_id)
 
         # start new thread to keep monitor heartbeat
         self._thread = threading.Thread(target=self.heartbeat)
-        #t.setDaemon(True)
+        self._thread.setDaemon(True)
         self._thread.start()
         self.join_group(room_id)
 
@@ -270,7 +278,7 @@ class DanMuClient(object):
 
 if __name__ == "__main__":
     logging.basicConfig(level=logging.DEBUG,
-            format='%(asctime)s %(name)-8s %(levelname)-6s %(message)s',
+            format='%(asctime)s %(name)-8s:%(lineno)d %(levelname)-6s %(message)s',
             filename='test.log',
             datefmt = '%m-%d %H:%M:%S')
 
@@ -278,7 +286,7 @@ if __name__ == "__main__":
     formatter = logging.Formatter('%(asctime)s %(levelname)-6s %(message)s')
     console.setFormatter(formatter)
     console.setLevel(logging.INFO)
-    logging.getLogger('').addHandler(console)
+    logging.getLogger().addHandler(console)
 
     danmu = DanMuClient()
     danmu.run(room_id=sys.argv[1])
