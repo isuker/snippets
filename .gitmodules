@@ -1,0 +1,6 @@
+[submodule "hellostack/pelican-plugins"]
+	path = hellostack/pelican-plugins
+	url = https://github.com/getpelican/pelican-plugins.git
+[submodule "hellostack/pelican-themes"]
+	path = hellostack/pelican-themes
+	url = https://github.com/getpelican/pelican-themes.git
