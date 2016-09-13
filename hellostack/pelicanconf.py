@@ -1,6 +1,9 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*- #
 from __future__ import unicode_literals
+import os
+
+CWD=os.path.abspath(os.curdir)
 
 AUTHOR = u'Ray Chen'
 SITENAME = u'Hello Stack'
@@ -18,7 +21,7 @@ DATE_FORMATS = {
 
 #THEME = "bootstrap2"
 #THEME = "/home/ray/hellostack/pelican-themes/simple-bootstrap"
-THEME = "/home/ray/hellostack/pelican-themes/pelican-bootstrap3"
+THEME = os.path.join(CWD, "pelican-themes/pelican-bootstrap3")
 SITESUBTITLE = "Cloud,Python,Automation,Fedora/Linux"
 GITHUB_URL = "https://github.com/crook"
 #GITHUB_USER = "crook"
@@ -48,6 +51,7 @@ DISPLAY_TAGS_INLINE = True
 # Blogroll
 LINKS = (
     (u'小企鹅看大世界', 'http://chenrano2002.blog.chinaunix.net/'),
+    ('Feisky Blog', 'http://feisky.xyz'),
     ('Lyndon Blog', 'http://www.hellospark.me/'),
     ('Openstack', 'http://www.openstack.org/'),
 )

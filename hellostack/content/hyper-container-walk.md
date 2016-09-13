@@ -52,13 +52,13 @@ hypercontainer有自己的实现： <https://blog.hyper.sh/a_step_towards_the_op
 
 ## 类似项目
 
-Interl的clearContainer: https://clearlinux.org/features/clear-containers
-Vmware的VIC: https://github.com/vmware/vic
+* Interl的clearContainer: https://clearlinux.org/features/clear-containers
+* Vmware的VIC: https://github.com/vmware/vic
 
 
 
 ## 资料
 
-http://thenewstack.io/hyper-a-hypervisor-agnostic-docker-engine/
-https://blog.hyper.sh/hyper-and-the-art-of-containerization.html
-http://wangxu.me/zhihu/2016/05/20/how-about-hyper/index.html
+* <http://thenewstack.io/hyper-a-hypervisor-agnostic-docker-engine/>
+* <https://blog.hyper.sh/hyper-and-the-art-of-containerization.html>
+* <http://wangxu.me/zhihu/2016/05/20/how-about-hyper/index.html>
