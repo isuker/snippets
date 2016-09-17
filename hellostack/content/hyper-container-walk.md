@@ -1,4 +1,4 @@
-Title: 超容器：虚拟机 or 容器.md
+Title: 超容器：虚拟机 or 容器
 Date: 2016-9-13 21:49
 Category: Docker
 Tags: docker
@@ -53,7 +53,7 @@ hypercontainer有自己的实现： <https://blog.hyper.sh/a_step_towards_the_op
 ## 类似项目
 
 * Interl的clearContainer: https://clearlinux.org/features/clear-containers
-* Vmware的VIC: https://github.com/vmware/vic
+* Vmware的VIC: https://github.com/vmware/vic [传统容器主机和VIC模式的比较](https://github.com/vmware/vic/blob/master/doc/design/arch/vic-container-abstraction.md)
 
 
 

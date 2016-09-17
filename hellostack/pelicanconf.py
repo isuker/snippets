@@ -37,7 +37,7 @@ TRANSLATION_FEED_ATOM = 'feeds/all-%s.atom.xml'
 
 PYGMENTS_STYLE = 'manni'
 BOOTSTRAP_NAVBAR_INVERSE = True
-ABOUT_ME = 'about.html'
+#ABOUT_ME = 'about.html'
 
 DISPLAY_TAGS_ON_SIDEBAR = True
 DISPLAY_TAGS_INLINE = True
@@ -51,8 +51,9 @@ DISPLAY_TAGS_INLINE = True
 # Blogroll
 LINKS = (
     (u'小企鹅看大世界', 'http://chenrano2002.blog.chinaunix.net/'),
-    ('Feisky Blog', 'http://feisky.xyz'),
-    ('Lyndon Blog', 'http://www.hellospark.me/'),
+    ('Feisky\'s Blog', 'http://feisky.xyz'),
+    ('Wang Xu\'s Blog', 'http://wangxu.me'),
+    ('Lyndon\'s Blog', 'http://www.hellospark.me/'),
     ('Openstack', 'http://www.openstack.org/'),
 )
 
