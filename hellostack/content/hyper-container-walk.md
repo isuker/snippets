@@ -56,6 +56,12 @@ hypercontainer有自己的实现： <https://blog.hyper.sh/a_step_towards_the_op
 * Vmware的VIC: https://github.com/vmware/vic [传统容器主机和VIC模式的比较](https://github.com/vmware/vic/blob/master/doc/design/arch/vic-container-abstraction.md)
 
 
+## 黑马项目 unikernel/linuxkit (2017/07/04 update)
+* 介绍文章： <http://dockone.io/article/855> 
+* hyperd作者的点评<https://wangxu.me/container/2016/01/23/unikernel-critics/index.html>
+* linuxkit: http://feisky.xyz/2017/04/19/LinuxKit/
+* https://yq.aliyun.com/articles/74440?spm=5176.100239.blogcont74404.46.x5hZPU
+
 
 ## 资料
 

@@ -7,7 +7,7 @@ CWD=os.path.abspath(os.curdir)
 
 AUTHOR = u'Ray Chen'
 SITENAME = u'Hello Stack'
-SITEURL = 'http://hellostack.me'
+SITEURL = 'http://hellostack.info'
 
 PATH = 'content'
 
@@ -43,8 +43,8 @@ DISPLAY_TAGS_ON_SIDEBAR = True
 DISPLAY_TAGS_INLINE = True
 
 #MENUITEMS = (
-#    ('RSS', 'http://hellostack.me/feeds/all.atom.xml'),
-#    ('About', 'http://hellostack.me/about.html'),
+#    ('RSS', 'http://hellostack.info/feeds/all.atom.xml'),
+#    ('About', 'http://hellostack.info/about.html'),
 #
 #)
 
@@ -61,7 +61,7 @@ LINKS = (
 SOCIAL = (
     ('Github', 'https://github.com/crook'),
     ('Weibo', 'http://weibo.com/crookcrook/'),
-    ('RSS', 'http://hellostack.me/feeds/all.atom.xml'),
+    ('RSS', 'http://hellostack.info/feeds/all.atom.xml'),
 )
 
 DEFAULT_PAGINATION = 10

@@ -107,7 +107,7 @@ cf_upload: publish
 github: publish
 	cd $(CROOK_DIR) && ghp-import -b $(GITHUB_PAGES_BRANCH) $(OUTPUTDIR)
 	cd $(CROOK_DIR) && git checkout $(GITHUB_PAGES_BRANCH) && cp $(BASEDIR)/CNAME $(CROOK_DIR) && git add CNAME && git commit -m 'Add CNAME' && git checkout master
-	cd $(CROOK_DIR) && git push origin $(GITHUB_PAGES_BRANCH):master
+	cd $(CROOK_DIR) && git push origin $(GITHUB_PAGES_BRANCH):master -f
 	cd $(CROOK_DIR) && git pull
 
 .PHONY: html help clean regenerate serve devserver publish ssh_upload rsync_upload dropbox_upload ftp_upload s3_upload cf_upload github
