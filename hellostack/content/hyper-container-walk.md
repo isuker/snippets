@@ -20,7 +20,7 @@ Summary: 容器和虚拟机谁是未来？哪个更好？答案也许是集两�
 
     * HyperContainer = Hypervisor + Guest Kernel + Data (image) *
 
-容器利用虚拟机的硬件隔离提高安全系数，结合定制化的微内核，在hypervior直接运行Image（兼容docker image）。 容器启动运行之后，即是虚拟机又是容器。即可以继续使用虚拟机的生态工具，又可以提供容器运行环境。
+容器利用虚拟机的硬件隔离提高安全系数，结合定制化的微内核，在hypervior直接运行Image（兼容docker image）。 容器启动运行之后，即是虚拟机又是容器。即可以继续使用虚拟机的生态工具，又可以提供容器运行环境。简单来说，就说用hypervisor带代替容器需要的运行时和命令空间。
 
 
 
@@ -34,11 +34,11 @@ Hyper包含四个组件：
 
 * CLI:  hyper的前端入口。通过REST跟Damon通信，调度后端具体哪个host来部署container
 
-* HyperStart: 基本就是initramfs
+* HyperStart: 基本就是initramfs 和 init服务
 
 ![](http://thenewstack.io/wp-content/uploads/2015/07/image011.png)
 
-容器基础工作弄好之后，hyper基本就是一个docker的翻版。基本命令行跟docker一行，然后hyper可以直接运行docker hub上面的iamge。 为了更有效的管理hyper容器, 开发了支持k8s运行时的<https://github.com/hyperhq/hypernetes>. 就是一个Caas，同时支持多租户。这个容器云已经开放，用户可以注册使用，按秒为单位计费。初始赠送30美元。有兴趣的可以去看看。
+容器基础工作弄好之后，hyper基本就是一个docker的翻版。基本命令行跟docker一行，然后hyper可以直接运行docker hub上面的iamge。 为了更有效的管理hyper容器, 开发了支持k8s运行时的<https://github.com/hyperhq/hypernetes>. 就是一个Caas，同时支持多租户。这个容器云已经开放，用户可以注册使用，按秒为单位计费。初始赠送20美元。有兴趣的可以去看看。
 
 
 
@@ -56,7 +56,8 @@ hypercontainer有自己的实现： <https://blog.hyper.sh/a_step_towards_the_op
 * Vmware的VIC: https://github.com/vmware/vic [传统容器主机和VIC模式的比较](https://github.com/vmware/vic/blob/master/doc/design/arch/vic-container-abstraction.md)
 
 
-## 黑马项目 unikernel/linuxkit (2017/07/04 update)
+## 黑马项目 unikernel/linuxkit (2017/06/04 update)
+
 * 介绍文章： <http://dockone.io/article/855> 
 * hyperd作者的点评<https://wangxu.me/container/2016/01/23/unikernel-critics/index.html>
 * linuxkit: http://feisky.xyz/2017/04/19/LinuxKit/
@@ -68,3 +69,5 @@ hypercontainer有自己的实现： <https://blog.hyper.sh/a_step_towards_the_op
 * <http://thenewstack.io/hyper-a-hypervisor-agnostic-docker-engine/>
 * <https://blog.hyper.sh/hyper-and-the-art-of-containerization.html>
 * <http://wangxu.me/zhihu/2016/05/20/how-about-hyper/index.html>
+* <https://m.douban.com/note/581584151/?bid=u39uR-VeuJs>
+* <http://blog.kubernetes.io/2016/05/hypernetes-security-and-multi-tenancy-in-kubernetes.html>
