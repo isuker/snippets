@@ -1,4 +1,4 @@
-Title:Run Docker on VMware Fusion
+Title:Run Docker on VMware Fusion Mac
 Date: 2016-10-08 16:49
 Category: Docker
 Tags: docker
@@ -129,7 +129,24 @@ sudo vi /Library/Preferences/VMware\ Fusion/vmnet8/nat.conf
  57 # Use these with care - anyone can enter into your VM through these...
  58 # The format and example are as follows:
  59 #<external port number> = <VM's IP address>:<VM's port number>
- 60 #8080 = 172.16.3.128:80
+ 60 8080 = 172.16.3.128:80
+```
+and then restart the network service
+```bash
+ranc-m01:~ ranc$ sudo /Applications/VMware\ Fusion.app/Contents/Library/vmnet-cli --stop
+Stopped DHCP service on vmnet1
+Disabled hostonly virtual adapter on vmnet1
+Stopped DHCP service on vmnet8
+Stopped NAT service on vmnet8
+Disabled hostonly virtual adapter on vmnet8
+Stopped all configured services on all networks
+ranc-m01:~ ranc$ sudo /Applications/VMware\ Fusion.app/Contents/Library/vmnet-cli --start
+Enabled hostonly virtual adapter on vmnet1
+Started DHCP service on vmnet1
+Started NAT service on vmnet8
+Enabled hostonly virtual adapter on vmnet8
+Started DHCP service on vmnet8
+Started all configured services on all networks
 ```
 
 ## Reference
